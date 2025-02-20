@@ -17,7 +17,7 @@ function App() {
     <div className='container'>
       <Sidebar setPage={setCurrentPage}/>
       <main>
-        <UtilityBar />
+        <UtilityBar titleText={currentPage} isSearchVisible={currentPage != "Contacts"} />
         {currentPage === "Dashboard" && <MainContainer />}
         {currentPage === "Analytics" && <Analytics />}
         {currentPage === "Contacts" && <Contacts />}

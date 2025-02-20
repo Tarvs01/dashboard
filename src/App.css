@@ -19,6 +19,9 @@
   --primary-font: inter, sans-serif;
   --component-padding: 1.5rem 2rem;
   --primary-font-color: #ffffff;
+  --primary-button-bg: #444546;
+  --primary-buttom-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --fill-one: #ffffff;
 }
 
 body{
@@ -642,6 +645,245 @@ main > div:not([class="utility-bar-cont"]){
   font-size: 14px;
   border-radius: 4px;
 }
+
+
+/* CONTACTS PAGE STYLES BEGINS */
+
+.contacts-header{
+  display: flex;
+  margin: 10px 0;
+}
+
+.contacts-sort{
+  display: flex;
+  align-items: center;
+}
+
+.contacts-sort h4{
+  margin-right: 5px;
+}
+
+.contacts-sort select{
+  background-color: transparent;
+  padding: 5px;
+  color: var(--primary-font-color);
+  font-family: var(--primary-font);
+  outline: none;
+  border-radius: 5px;
+}
+
+.contacts-sort option{
+  color: var(--primary-font-color);
+  background-color: var(--component-bg-color);
+  border-radius: 5px;
+}
+
+.contacts-search-bar-cont{
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+}
+
+.contacts-search-bar-cont svg{
+  fill: var(--svg-icon-color);
+  width: 20px;
+}
+
+.contacts-search-bar-cont input{
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  color: var(--dark-gray-text);
+  margin-left: 10px;
+  font: var(--primary-font);
+  font-weight: 500;
+}
+
+.contacts-search-bar-cont input:focus{
+  outline: none;
+  border: none;
+}
+
+.new-contact{
+  background-color: transparent;
+  padding: 10px 15px;
+  box-shadow: var(--primary-buttom-box-shadow);
+  background-color: var(--primary-button-bg);
+  color: var(--primary-font-color);
+  font-family: var(--primary-font);
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.new-contact:active{
+  position: relative;
+  top: 3px;
+}
+
+.contacts-main{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.contacts-main:has(.contacts-cont-split){
+  height: 90%;
+}
+
+.contacts-cont{
+  grid-column-start: 1;
+  grid-column-end: 3;
+  height: 78vh;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.contacts-cont-split{
+  grid-column-end: 2;
+  /* height: 80vh;
+  overflow-y: scroll;
+  scrollbar-width: none; */
+}
+
+.contact-cont{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.contact-cont:hover{
+  border-bottom: 1px solid gray;
+}
+
+.contact-cont h5{
+  text-align: left;
+}
+
+.contact-cont > div:first-of-type{
+  display: flex;
+  align-items: center;
+}
+
+.contact-cont img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.contact-cont h4{
+  font-weight: 400;
+  margin-left: 10px;
+  text-wrap: nowrap;
+}
+
+.disappear{
+  display: none;
+}
+
+.single-contact{
+  background-color: rgba(47, 47, 51, .3);
+}
+
+.split-top{
+  display: flex;
+  width: fit-content;
+  margin: 20px auto;
+  align-items: center;
+}
+
+.split-top img{
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.split-top-info h4{
+  font-weight: 400;
+}
+
+.split-top-contacts{
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.split-top-contacts button{
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  margin-right: 5px;
+  display: inline-flex;
+  align-items: center;
+  background: var(--primary-button-bg);
+  box-shadow: var(--primary-buttom-box-shadow);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.split-top-contacts button:first-of-type{
+  padding: 8px 12px;
+  font: var(--primary-font);
+}
+
+.split-top-contacts button:last-of-type{
+  background-color: red;
+}
+
+.split-top-contacts button:first-of-type span{
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+.split-top-contacts svg{
+  width: 15px;  
+  fill: var(--fill-one);
+}
+
+.split-main{
+  padding: 5px 15px;
+}
+
+.split-main > div{
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  margin-bottom: 20px;
+}
+
+.split-main div h4{
+  text-align: right;
+  margin-right: 5px;
+}
+
+.split-main div p{
+  margin-left: 5px;
+}
+
+.contact-socials{
+  display: flex;
+}
+
+.contact-socials div{
+  margin-right: 5px;
+  fill: var(--fill-one);
+  background-color: var(--primary-button-bg);
+  box-shadow: var(--primary-buttom-box-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 7px;
+}
+
+.contact-socials svg{
+  width: 16px;
+}
+
 /* @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
