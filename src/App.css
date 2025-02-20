@@ -235,7 +235,7 @@ body{
   }
 }
 
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 620px) {
   .sidebar-medium{
     display: none;
   }
@@ -287,11 +287,16 @@ main > div:not([class="utility-bar-cont"]){
   }
 }
 
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 750px) {
   main{
-    width: 100vw;
     padding-left: 10px;
     padding-right: 10px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  main{
+    width: 100vw;
   }
 }
 
@@ -381,7 +386,7 @@ main > div:not([class="utility-bar-cont"]){
   }
 }
 
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 620px) {
   .utility-bar-cont > h1{
     display: none;
   }
@@ -393,6 +398,9 @@ main > div:not([class="utility-bar-cont"]){
 
 /* UTILITY BAR STYLES END */
 
+
+
+/* DASHBOARD CONTAINER STYLES START */
 .dashboard-container{
   display: grid;
   width: 100%;
@@ -401,9 +409,26 @@ main > div:not([class="utility-bar-cont"]){
   grid-column-gap: 20px;
 }
 
-.dashboard-container > div{
-  height: 100%;
+/* DASHBOARD CONTAINER RESPONSIVENESS */
+@media screen and (max-width: 1150px) {
+  .dashboard-container{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .invoices{
+    order: 1;
+  }
 }
+
+@media screen and (max-width: 580px) {
+  .dashboard-container{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* DASHBOARD CONTAINER STYLES END */
+
+
 
 .invoices{
   background-color: var(--component-bg-color);
@@ -412,6 +437,12 @@ main > div:not([class="utility-bar-cont"]){
   grid-column-start: 1;
   grid-column-end: 3;
   height: fit-content;
+}
+
+@media screen and (max-width: 580px) {
+  .invoices{
+    grid-column-end: 2;
+  }
 }
 
 #total-invoices{
