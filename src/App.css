@@ -38,6 +38,8 @@ body{
 .container{
   display: flex;
   height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
 
@@ -249,6 +251,10 @@ body{
   .nav-hamburger{
     display: block;
   }
+
+  .nav-hamburger svg{
+    width: 25px !important;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -261,13 +267,12 @@ body{
 
 
 /* MAIN STYLES START */
-
 main{
   padding: 2rem 2rem 1rem 2rem;
   height: 100vh;
   scrollbar-width: 0;
   scrollbar-gutter: 0;
-  width: 100%;
+  width: 81vw;
 }
 
 main > div:not([class="utility-bar-cont"]){
@@ -276,10 +281,28 @@ main > div:not([class="utility-bar-cont"]){
   scrollbar-width: none;
 }
 
+@media screen and (max-width: 1000px) {
+  main{
+    width: 93vw;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  main{
+    width: 100vw;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* MAIN STYLES END */
+
+
+
+/* UTILITY BAR STYLES BEGIN */
 .utility-bar-cont{
   display: flex;
   align-items: center;
-  flex-wrap: nowrap;
   margin-bottom: 10px;
 }
 
@@ -327,16 +350,48 @@ main > div:not([class="utility-bar-cont"]){
 }
 
 .util-square{
-  border: 1.5px solid var(--dark-gray-text);
-  width: 38px;
-  height: 38px;
+  border: 1.5px solid rgb(70, 69, 69);
+  width: 35px;
+  height: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 5px;
   border-radius: 10px;
   margin: 0 5px;
+  cursor: pointer;
 }
+
+.util-square svg{
+  width: 17px;
+}
+
+.util-square-search{
+  display: none;
+}
+
+/* UTILITY BAR RESPONSIVENESS */
+@media screen and (max-width: 700px) {
+  .search-bar-cont{
+    display: none;
+  }
+
+  .util-square-cont{
+    margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .utility-bar-cont > h1{
+    display: none;
+  }
+
+  .util-square-search{
+    display: flex;
+  }
+}
+
+/* UTILITY BAR STYLES END */
 
 .dashboard-container{
   display: grid;

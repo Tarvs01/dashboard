@@ -5,10 +5,10 @@ import Activity from './Activity'
 import AnalyticalAi from './AnalyticalAi'
 import Profit from './Profit'
 
-function MainContainer() {
+function MainContainer({width}: {width: number}) {
   return (
     <div className='dashboard-container'>
-      <Profit />
+      <Profit width={width}/>
       <SalesReport />
       <AnalyticalAi />
       <Invoices />

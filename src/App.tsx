@@ -34,7 +34,7 @@ function App() {
       <Sidebar setPage={setCurrentPage} isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen}/>
       <main>
         <UtilityBar titleText={currentPage} isSearchVisible={currentPage != "Contacts"} openSidebar={setIsSidebarOpen} />
-        {currentPage === "Dashboard" && <MainContainer />}
+        {currentPage === "Dashboard" && <MainContainer width={windowWidth} />}
         {currentPage === "Analytics" && <Analytics />}
         {currentPage === "Contacts" && <Contacts />}
         {currentPage === "Mail" && <Mail />}
