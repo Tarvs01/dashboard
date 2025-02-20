@@ -22,6 +22,7 @@
   --primary-button-bg: #444546;
   --primary-buttom-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   --fill-one: #ffffff;
+  --background-color: #242529;
 }
 
 body{
@@ -39,9 +40,13 @@ body{
   height: 100vh;
 }
 
+
+
+/* SIDEBAR STYLES STARTS */
 .sidebar-cont{
   border-right: 1px solid #ffffff;
   padding-top: 0 !important;
+  position: relative;
 }
 
 .sidebar{
@@ -50,7 +55,8 @@ body{
   padding: 1rem 1rem;
   height: 100vh;
   max-height: 100vh;
-  width: 300px;
+  width: 19vw;
+  max-width: 300px;
 }
 
 .sidebar svg{
@@ -61,6 +67,13 @@ body{
 
 .log-out{
   margin-top: auto;
+  display: flex;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.log-out > div{
+  margin-right: 10px;
 }
 
 .links-container{
@@ -88,6 +101,149 @@ body{
 .links-container > li > div > div{
   margin-right: 5px;
 }
+
+
+.sidebar-medium{
+  display: none;
+  flex-direction: column;
+  padding: 10px 10px;
+  height: 100vh;
+  max-height: 100vh;
+  width: fit-content;
+  overflow-x: hidden;
+}
+
+.sidebar-medium svg{
+  fill: var(--svg-icon-color);
+  width: 22px;
+  height: 22px;
+}
+
+.sidebar-medium .links-container > li{
+  border-radius: 0;
+  padding: 20px 0 0 0;
+  justify-content: center;
+}
+
+.sidebar-medium .links-container > li:hover{
+  /* background-color: rgba(255, 255, 255, .1); */
+  border-bottom: 3px solid rgb(63, 63, 231);
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.sidebar-medium .links-container > li > div > div{
+  margin-right: 0;
+  padding: 0 5px;
+}
+
+.sidebar-small-cont{
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(10px);
+  z-index: 50;
+}
+
+.sidebar-small{
+  display: none;
+  flex-direction: column;
+  padding: 1rem 1rem;
+  height: 100vh;
+  max-height: 100vh;
+  width: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: var(--background-color);
+  animation: slide-out 0.3s linear 0s 1 forwards;
+}
+
+@keyframes slide-out {
+  0%{
+    left: -100vw;
+  }
+  100%{
+    left: 0;
+  }
+}
+
+.sidebar-small svg{
+  fill: var(--svg-icon-color);
+  width: 22px;
+  height: 22px;
+}
+
+.sidebar-small .logo{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.sidebar-small .log-out{
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
+
+.sidebar-small svg{
+  fill: var(--svg-icon-color);
+}
+
+.nav-hamburger{
+  display: none;
+}
+
+/* SIDEBAR RESPONSIVENESS */
+@media screen and (max-width: 1000px) {
+  .sidebar{
+    display: none;
+  }
+
+  .sidebar-medium{
+    display: flex;
+  }
+
+  .sidebar-cont{
+    border-right: 1px solid transparent;
+    box-shadow: var(--primary-buttom-box-shadow);
+    padding-top: 0 !important;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .sidebar-medium{
+    display: none;
+  }
+
+  .sidebar-small{
+    display: flex;
+  }
+
+  .sidebar-small-cont{
+    display: block;
+  }
+
+  .nav-hamburger{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar-small{
+    width: 100vw;
+  }
+}
+
+/* SIDEBAR STYLES END */
+
+
+/* MAIN STYLES START */
 
 main{
   padding: 2rem 2rem 1rem 2rem;
@@ -649,9 +805,19 @@ main > div:not([class="utility-bar-cont"]){
 
 /* CONTACTS PAGE STYLES BEGINS */
 
+.contacts-cancel{
+  display: flex;
+  padding: 10px;
+}
+
+.contacts-cancel svg{
+  width: 20px;
+  margin-left: auto;
+  fill: var(--fill-one);
+}
+
 .contacts-header{
   display: flex;
-  margin: 10px 0;
 }
 
 .contacts-sort{
@@ -832,7 +998,7 @@ main > div:not([class="utility-bar-cont"]){
 }
 
 .split-top-contacts button:last-of-type{
-  background-color: red;
+  background-color: #ff0000;
 }
 
 .split-top-contacts button:first-of-type span{

@@ -1,13 +1,42 @@
-import React from 'react'
 
 interface UtilityBarType{
   isSearchVisible: true | false,
   titleText: string,
+  openSidebar: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-function UtilityBar({isSearchVisible, titleText}: UtilityBarType) {
+function UtilityBar({isSearchVisible, titleText, openSidebar}: UtilityBarType) {
   return (
     <div className='utility-bar-cont'>
+        <div className='nav-hamburger' onClick={() => openSidebar(true)}><svg viewBox="0 0 100 80">
+              <rect
+                x="0"
+                y="20"
+                width="80"
+                height="8"
+                fill="currentColor"
+                id="rect1"
+                rx="3"
+              ></rect>
+              <rect
+                x="0"
+                y="40"
+                width="80"
+                height="8"
+                fill="currentColor"
+                id="rect2"
+                rx="3"
+              ></rect>
+              <rect
+                x="0"
+                y="60"
+                width="80"
+                height="8"
+                fill="currentColor"
+                id="rect3"
+                rx="3"
+              ></rect>
+            </svg></div>
         <h1>{titleText}</h1>
 
         <div className="search-bar-cont">
