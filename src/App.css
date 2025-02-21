@@ -100,11 +100,11 @@ body{
   list-style-type: none;
   margin-top: 1.5rem;
   width: max-content;
+  width: 100%;
 }
 
 .links-container > li{
   padding: 0.8rem 1rem;
-  padding-left: 0;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -253,6 +253,12 @@ body{
 
 .nav-hamburger{
   display: none;
+  align-items: center;
+}
+
+.nav-hamburger > div{
+  display: flex;
+  margin-left: 5px;
 }
 
 /* SIDEBAR RESPONSIVENESS */
@@ -286,7 +292,7 @@ body{
   }
 
   .nav-hamburger{
-    display: block;
+    display: flex;
   }
 
   .nav-hamburger svg{
@@ -402,6 +408,11 @@ main > div:not([class="utility-bar-cont"]){
   border-radius: 10px;
   margin: 0 5px;
   cursor: pointer;
+}
+
+.util-square:last-of-type{
+  background-image: url(https://randomuser.me/api/portraits/men/4.jpg);
+  background-size: contain;
 }
 
 .util-square svg{
