@@ -33,7 +33,7 @@ function App() {
     <div className='container'>
       <Sidebar setPage={setCurrentPage} isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen}/>
       <main>
-        <UtilityBar titleText={currentPage} isSearchVisible={currentPage != "Contacts"} openSidebar={setIsSidebarOpen} />
+        <UtilityBar width={windowWidth} titleText={currentPage} isSearchVisible={currentPage != "Contacts"} openSidebar={setIsSidebarOpen} />
         {currentPage === "Dashboard" && <MainContainer width={windowWidth} />}
         {currentPage === "Analytics" && <Analytics />}
         {currentPage === "Contacts" && <Contacts />}

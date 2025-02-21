@@ -13,7 +13,21 @@ function Sidebar({setPage, isSidebarOpen, setIsSidebarOpen} : SidebarProps) {
   return (
     <aside className="sidebar-cont">
       <div className="sidebar">
-        <div className="logo">SPECTRA</div>
+        <div className="logo">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 504.123 504.123">
+            <polygon fill="#f31b1b" points="224.492,0 50.814,100.281 224.492,200.546 "/>
+            <polygon fill="#7c7cf7" points="193.331,252.062 19.692,151.812 19.692,352.319 "/>
+            <polygon fill="#50e450" points="279.631,0 279.631,200.523 453.285,100.265 "/>
+            <g>
+	            <polygon fill="#fcfc35" points="279.631,303.561 279.631,504.123 453.309,403.842 	"/>
+	            <polygon fill="#e02be0" points="224.492,303.561 50.79,403.826 224.492,504.123 	"/>
+            </g>
+            <polygon fill="#ffb52c" points="310.745,252.054 484.431,352.327 484.431,151.78 "/>
+            <polygon fill="#7c7cf7" points="193.331,252.062 19.692,265.224 19.692,352.319 "/>
+            <polygon fill="#ffb52c" points="310.745,252.054 484.431,352.327 484.431,265.185 "/>
+          </svg>
+          <h1>SPARKLE</h1>
+        </div>
 
         <ul className="links-container">
           <li onClick={() => setPage("Dashboard")}>
@@ -148,7 +162,20 @@ function Sidebar({setPage, isSidebarOpen, setIsSidebarOpen} : SidebarProps) {
       </div>
 
       <div className="sidebar-medium">
-        <div className="logo">S</div>
+        <div className="logo">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 504.123 504.123">
+            <polygon fill="#f31b1b" points="224.492,0 50.814,100.281 224.492,200.546 "/>
+            <polygon fill="#7c7cf7" points="193.331,252.062 19.692,151.812 19.692,352.319 "/>
+            <polygon fill="#50e450" points="279.631,0 279.631,200.523 453.285,100.265 "/>
+            <g>
+	            <polygon fill="#fcfc35" points="279.631,303.561 279.631,504.123 453.309,403.842 	"/>
+	            <polygon fill="#e02be0" points="224.492,303.561 50.79,403.826 224.492,504.123 	"/>
+            </g>
+            <polygon fill="#ffb52c" points="310.745,252.054 484.431,352.327 484.431,151.78 "/>
+            <polygon fill="#7c7cf7" points="193.331,252.062 19.692,265.224 19.692,352.319 "/>
+            <polygon fill="#ffb52c" points="310.745,252.054 484.431,352.327 484.431,265.185 "/>
+        </svg>
+        </div>
 
         <ul className="links-container">
           <li onClick={() => setPage("Dashboard")}>
@@ -308,7 +335,19 @@ function Sidebar({setPage, isSidebarOpen, setIsSidebarOpen} : SidebarProps) {
         </div>
 
         <div className="logo">
-          <h2>SPECTRA</h2>
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 504.123 504.123">
+            <polygon fill="#f31b1b" points="224.492,0 50.814,100.281 224.492,200.546 "/>
+            <polygon fill="#7c7cf7" points="193.331,252.062 19.692,151.812 19.692,352.319 "/>
+            <polygon fill="#50e450" points="279.631,0 279.631,200.523 453.285,100.265 "/>
+            <g>
+	            <polygon fill="#fcfc35" points="279.631,303.561 279.631,504.123 453.309,403.842 	"/>
+	            <polygon fill="#e02be0" points="224.492,303.561 50.79,403.826 224.492,504.123 	"/>
+            </g>
+            <polygon fill="#ffb52c" points="310.745,252.054 484.431,352.327 484.431,151.78 "/>
+            <polygon fill="#7c7cf7" points="193.331,252.062 19.692,265.224 19.692,352.319 "/>
+            <polygon fill="#ffb52c" points="310.745,252.054 484.431,352.327 484.431,265.185 "/>
+        </svg>
+          <h1>SPECTRA</h1>
         </div>
 
         <ul className="links-container">

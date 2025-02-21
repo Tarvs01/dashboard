@@ -1163,7 +1163,7 @@ function HandleSelectChange(e: ChangeEvent<HTMLSelectElement>){
         <input type="text" name="utility-search" id="utility-search" placeholder='Name or Email...' />
         </div>
 
-        <button className="new-contact">Add New Contact</button>
+        <button className="new-contact">Add New</button>
       </div>
 
       <div className="contacts-main">
@@ -1173,12 +1173,15 @@ function HandleSelectChange(e: ChangeEvent<HTMLSelectElement>){
             return <div className="contact-cont" key={singleContact.ID} onClick={() => updateSelectedContact(singleContact.ID)}>
               <div>
                 <img src={singleContact.image} alt="profile-img" />
+                <div className='cn-name'>
                 <h4>{singleContact.name}</h4>
+                <span>{singleContact.job}</span>
+                </div>
               </div>
 
-              <h4 className={isSplitPageShown ? "disappear" : ""}>{singleContact.job}</h4>
-              <h4 className={isSplitPageShown ? "disappear" : ""}>{singleContact.email}</h4>
-              <h4 className={isSplitPageShown ? "disappear" : ""}>{singleContact.phone}</h4>
+              <h4 className={`cn-job ${isSplitPageShown ? "disappear" : ""}`}>{singleContact.job}</h4>
+              <h4 className={`cn-mail ${isSplitPageShown ? "disappear" : ""}`}>{singleContact.email}</h4>
+              <h4 className={`cn-phone ${isSplitPageShown ? "disappear" : ""}`}>{singleContact.phone}</h4>
             </div>
           })
         }

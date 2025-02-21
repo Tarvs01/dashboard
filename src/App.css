@@ -20,7 +20,8 @@
   --component-padding: 1.5rem 2rem;
   --primary-font-color: #ffffff;
   --primary-button-bg: #444546;
-  --primary-buttom-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --primary-button-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --component-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   --fill-one: #ffffff;
   --background-color: #242529;
 }
@@ -29,6 +30,9 @@ body{
   max-height: 100vh;
   font-family: var(--primary-font);
   font-weight: 300;
+  color: var(--primary-font-color);
+  background-color: var(--background-color);
+
 }
 
 .container > div, .container > aside{
@@ -59,12 +63,26 @@ body{
   max-height: 100vh;
   width: 19vw;
   max-width: 300px;
+  padding-left: 2rem;
 }
 
 .sidebar svg{
   fill: var(--svg-icon-color);
   width: 1.4rem;
   height: 1.4rem;
+}
+
+.sidebar .logo{
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .logo svg{
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  fill: #ffb52c;
 }
 
 .log-out{
@@ -80,12 +98,13 @@ body{
 
 .links-container{
   list-style-type: none;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   width: max-content;
 }
 
 .links-container > li{
   padding: 0.8rem 1rem;
+  padding-left: 0;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -118,6 +137,12 @@ body{
   overflow-x: hidden;
 }
 
+.sidebar-medium .logo{
+  display: flex;
+  justify-content:center;
+  margin-top: 30px;
+}
+
 .sidebar-medium svg{
   fill: var(--svg-icon-color);
   width: 22px;
@@ -140,6 +165,7 @@ body{
 .sidebar-medium .links-container > li > div > div{
   margin-right: 0;
   padding: 0 5px;
+  padding-bottom: 6px;
 }
 
 .sidebar-small-cont{
@@ -190,9 +216,20 @@ body{
 
 .sidebar-small .logo{
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   padding: 0 20px;
+  margin-top: 20px;
+}
+
+.sidebar-small .logo svg{
+  width: 60px;
+  height: 60px;
+}
+
+.sidebar-small .logo h1{
+  margin-top: 15px;
+  font-weight: 600;
 }
 
 .sidebar-small svg{
@@ -230,7 +267,7 @@ body{
 
   .sidebar-cont{
     border-right: 1px solid transparent;
-    box-shadow: var(--primary-buttom-box-shadow);
+    box-shadow: var(--primary-button-box-shadow);
     padding-top: 0 !important;
   }
 }
@@ -268,7 +305,7 @@ body{
 
 /* MAIN STYLES START */
 main{
-  padding: 2rem 2rem 1rem 2rem;
+  padding: 2rem 1rem 1rem 2rem;
   height: 100vh;
   scrollbar-width: 0;
   scrollbar-gutter: 0;
@@ -434,6 +471,7 @@ main > div:not([class="utility-bar-cont"]){
   background-color: var(--component-bg-color);
   padding: var(--component-padding);
   border-radius: var(--component-border-radius);
+  box-shadow: var(--component-box-shadow);
   grid-column-start: 1;
   grid-column-end: 3;
   height: fit-content;
@@ -549,6 +587,7 @@ main > div:not([class="utility-bar-cont"]){
   padding: var(--component-padding);
   margin-bottom: 30px;
   border-radius: var(--component-border-radius);
+  box-shadow: var(--component-box-shadow);
 }
 
 #sales-report-container h2{
@@ -687,6 +726,7 @@ main > div:not([class="utility-bar-cont"]){
 .activity-container{
   background-color: var(--component-bg-color);
   border-radius: var(--component-border-radius);
+  box-shadow: var(--component-box-shadow);
   padding: var(--component-padding);
 }
 
@@ -778,6 +818,7 @@ main > div:not([class="utility-bar-cont"]){
 #analytical-ai-container{
   background-color: var(--component-bg-color);
   border-radius: var(--component-border-radius);
+  box-shadow: var(--component-box-shadow);
   padding: var(--component-padding);
 }
 
@@ -835,6 +876,7 @@ main > div:not([class="utility-bar-cont"]){
 .profit-container{
   background-color: #a6abff;
   border-radius: var(--component-border-radius);
+  box-shadow: var(--component-box-shadow);
   padding: var(--component-padding);
   color: #1b1b1b;
 }
@@ -977,7 +1019,7 @@ main > div:not([class="utility-bar-cont"]){
 .new-contact{
   background-color: transparent;
   padding: 10px 15px;
-  box-shadow: var(--primary-buttom-box-shadow);
+  box-shadow: var(--primary-button-box-shadow);
   background-color: var(--primary-button-bg);
   color: var(--primary-font-color);
   font-family: var(--primary-font);
@@ -995,6 +1037,7 @@ main > div:not([class="utility-bar-cont"]){
 .contacts-main{
   display: grid;
   grid-template-columns: 1fr 1fr;
+  position: relative;
 }
 
 .contacts-main:has(.contacts-cont-split){
@@ -1043,12 +1086,29 @@ main > div:not([class="utility-bar-cont"]){
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  margin-right: 10px;
 }
 
 .contact-cont h4{
   font-weight: 400;
-  margin-left: 10px;
   text-wrap: nowrap;
+}
+
+.cn-name{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cn-name span{
+  font-size: 14px;
+  color: rgb(165, 163, 163);
+  text-wrap: nowrap;
+  display: none;
+}
+
+.cn-mail, .cn-phone, .cn-job{
+  padding-left: 30px;
 }
 
 .disappear{
@@ -1057,6 +1117,52 @@ main > div:not([class="utility-bar-cont"]){
 
 .single-contact{
   background-color: rgba(47, 47, 51, .3);
+  height: 78vh;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+@media screen and (max-width: 770px) {
+  .single-contact{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--component-bg-color);
+    animation: slide-up 0.2s linear 0s 1 forwards;
+  }
+
+  .contacts-cont-split{
+    grid-column-end: 3;
+  }
+
+  .contact-cont{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .disappear{
+    display: block;
+  }
+
+  .cn-name span{
+    display: block;
+  }
+
+  .cn-job{
+    display: none;
+  }
+
+  .cn-mail, .cn-phone{
+    padding-left: 20px;
+  }
+}
+
+@keyframes slide-up {
+  0%{
+    top: 100vw;
+  }
+  100%{
+    top: 0;
+  }
 }
 
 .split-top{
@@ -1090,7 +1196,7 @@ main > div:not([class="utility-bar-cont"]){
   display: inline-flex;
   align-items: center;
   background: var(--primary-button-bg);
-  box-shadow: var(--primary-buttom-box-shadow);
+  box-shadow: var(--primary-button-box-shadow);
   color: #ffffff;
   cursor: pointer;
 }
@@ -1141,7 +1247,7 @@ main > div:not([class="utility-bar-cont"]){
   margin-right: 5px;
   fill: var(--fill-one);
   background-color: var(--primary-button-bg);
-  box-shadow: var(--primary-buttom-box-shadow);
+  box-shadow: var(--primary-button-box-shadow);
   display: flex;
   align-items: center;
   justify-content: center;
