@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState} from "react";
 
+
+//There is currently a development bug. When the component rerenders due to a state change, the chart becomes wrong
+//This issue does not presents itself on first render, so no production issue.
+//It is only an issue during development.
+//TO-DO. Find out what is wrong. Either something is supposed to change on rerender and isn't or vice versa.
 function Activity() {
-  interface ComputeFunctionType extends Function {
-    lastComputed: number[];
-  }
 
   //this sets the start point for the circle. middle left.
   //It should be the same value as the start value for the first object (transactions in this case)
@@ -11,7 +13,11 @@ function Activity() {
   computeAxialPoints.lastComputed = [40, 22];
   computeAxialPoints.lastAngle = 0;
 
-  let angleDifference = 7;
+  //Angle difference is what enables the space between each arc.
+  //If you want to modify the stroke-width, you will most likely need to modify the angle difference to account for the space.
+  //If you do, the space between the arcs for reports and transactions will most likely have issues. 
+  //You can modify then modify number at the start or end points of the arcs. e.g activityData.transactions.start[1] + 1.8. It is the 1.8 you will modify. Something similar is in reports.
+  let angleDifference = 10;
   const radius = 18;
 
   function computeAxialPoints(angle: number) {
@@ -39,7 +45,7 @@ function Activity() {
   }
 
   //This function generates the activity data by first randomly dividing 360 into 4 for the angles
-  //It then chooses a random total. It then splits the total into appropriate percentages based on the angle
+  //It then chooses a random total. It then splits the total into appropriate percentages based on the angles
   function generateDataPercentages() {
     let a = Math.floor(Math.random() * 20) + 50;
     let b = Math.floor(Math.random() * 20) + 50;
@@ -145,13 +151,13 @@ if (icon) {
         >
           <path
             d={`M${activityData.transactions.start[0]} 
-            ${activityData.transactions.start[1] + 1.2}   
+            ${activityData.transactions.start[1] + 1.8}   
             A18 18 0 0 1 
             ${activityData.transactions.end[0]} 
             ${activityData.transactions.end[1]}`}
             fill="none"
             stroke={`${activityData.transactions.color}`}
-            stroke-width="2"
+            stroke-width="2.5"
             stroke-linecap="round"
             strokeDasharray={pathLengths.transactions}
             strokeDashoffset={pathLengths.transactions}
@@ -166,7 +172,7 @@ if (icon) {
             ${activityData.payouts.end[1]}`}
             fill="none"
             stroke={`${activityData.payouts.color}`}
-            stroke-width="2"
+            stroke-width="2.5"
             stroke-linecap="round"
             strokeDasharray={pathLengths.payouts}
             strokeDashoffset={pathLengths.payouts}
@@ -181,7 +187,7 @@ if (icon) {
             ${activityData.sales.end[1]}`}
             fill="none"
             stroke={`${activityData.sales.color}`}
-            stroke-width="2"
+            stroke-width="2.5"
             stroke-linecap="round"
             strokeDasharray={pathLengths.sales}
             strokeDashoffset={pathLengths.sales}
@@ -196,7 +202,7 @@ if (icon) {
             ${activityData.reports.end[1] - 1.2}`}
             fill="none"
             stroke={`${activityData.reports.color}`}
-            stroke-width="2"
+            stroke-width="2.5"
             stroke-linecap="round"
             strokeDasharray={pathLengths.reports}
             strokeDashoffset={pathLengths.reports}
