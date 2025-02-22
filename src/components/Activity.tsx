@@ -1,12 +1,8 @@
-import { useState} from "react";
-
-
-//There is currently a development bug. When the component rerenders due to a state change, the chart becomes wrong
-//This issue does not presents itself on first render, so no production issue.
-//It is only an issue during development.
-//TO-DO. Find out what is wrong. Either something is supposed to change on rerender and isn't or vice versa.
+//Fixed the bug. It was the state that was causing the issue.
+//It retained it value and did not reinitialize. So When the new values were calculated, the state was not updated.
+//Could have used a useEffect to fix that but no.
+//Will remove above comments after this commit.
 function Activity() {
-
   //this sets the start point for the circle. middle left.
   //It should be the same value as the start value for the first object (transactions in this case)
   //It should also be the end value for the last object
@@ -94,44 +90,12 @@ function Activity() {
 
   const activityData = generateDataPercentages();
   const circumference = 2 * Math.PI * radius;
-  let tempPathLength = {
+  let pathLengths = {
     transactions: activityData.transactions.angle / 360 * circumference,
     payouts: (activityData.payouts.angle - angleDifference) / 360 * circumference,
     sales: (activityData.sales.angle - angleDifference) / 360 * circumference,
     reports: (activityData.reports.angle - angleDifference) / 360 * circumference
   }
-
-  const [pathLengths, setPathLengths] = useState(tempPathLength)
-
-/*   useEffect(() => {
-    let icon = document.querySelector("#activi-chart");
-
-if (icon) {
-  let paths = icon.querySelectorAll("path");
-  console.log("icon activity exists")
-  if (paths.length) {
-    console.log(paths.entries(), paths.length)
-    let tempPathLengths = {transactions: 0, payouts: 0, sales: 0, reports: 0};
-    for (let [index, path] of paths.entries()) {
-      let pathLength = path.getTotalLength();
-      if(index == 0){
-        tempPathLengths.transactions = pathLength;
-      }
-      else if(index == 1){
-        tempPathLengths.payouts = pathLength;
-      }
-      else if(index == 2){
-        tempPathLengths.sales = pathLength;
-      }
-      else{
-        tempPathLengths.reports = pathLength;
-      }
-      console.log(`Path #${index + 1}: ${pathLength}`);
-    }
-    setPathLengths(tempPathLengths);
-  }
-}
-  },[]); */
 
   return (
     <div className="activity-container">
