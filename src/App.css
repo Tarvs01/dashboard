@@ -492,6 +492,26 @@ main > div:not([class="utility-bar-cont"]){
   .invoices{
     grid-column-end: 2;
   }
+
+  .invoices, .profit-container, #sales-report-container, #analytical-ai-container, .activity-container{
+    max-width: 94vw;
+  }
+
+  #invoices-table td:last-of-type, #invoices-table th:last-of-type{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #invoices-table td:nth-of-type(4), #invoices-table th:nth-of-type(4){
+    display: none;
+  }
+}
+
+@media screen and (max-width: 405px) {
+  #invoices-table td:nth-of-type(2), #invoices-table th:nth-of-type(2){
+    display: none;
+  }
 }
 
 #total-invoices{
@@ -527,6 +547,22 @@ main > div:not([class="utility-bar-cont"]){
   margin-right: 5px;
 }
 
+.paid span, .unpaid span{
+  background-color: var(--background-color);
+  text-align: center;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.paid{
+  color: rgb(175, 238, 175);
+}
+
+.unpaid{
+  color: rgb(224, 150, 150);
+}
+
 .invoices-header{
   display: flex;
   flex-wrap: nowrap;
@@ -545,8 +581,8 @@ main > div:not([class="utility-bar-cont"]){
 .invoices-header-right svg{
   width: 15px;
   display: block;
-  margin-right: 6px;
-  fill: var(--svg-icon-color);
+  margin-right: 10px;
+  fill: var(--fill-one);
 }
 
 .invoices-modal{
@@ -850,6 +886,12 @@ main > div:not([class="utility-bar-cont"]){
   stroke: #9696df;
 }
 
+@media screen and (max-width: 580px) {
+  .analytical-graph svg{
+    height: 150px;
+  }
+}
+
 @keyframes drawGraphLine {
   to {
     stroke-dashoffset: 0;
@@ -1031,13 +1073,26 @@ main > div:not([class="utility-bar-cont"]){
   background-color: transparent;
   padding: 10px 15px;
   box-shadow: var(--primary-button-box-shadow);
-  background-color: var(--primary-button-bg);
+  /* background-color: var(--primary-button-bg); */
+  background: rgb(34, 34, 194);
   color: var(--primary-font-color);
   font-family: var(--primary-font);
   border-radius: 5px;
   cursor: pointer;
   border: none;
   outline: none;
+  display: flex;
+  align-items: center;
+}
+
+.new-contact svg{
+  width: 20px;
+  fill: var(--fill-one);
+}
+
+.new-contact span{
+  margin-left: 10px;
+  text-wrap: nowrap;
 }
 
 .new-contact:active{

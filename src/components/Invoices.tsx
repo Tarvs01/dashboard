@@ -20,7 +20,7 @@ function Invoices() {
         "id": 0
     },
     {
-        "customer_name": "Sebastian Madison",
+        "customer_name": "Saul Madison",
         "date": "03/11/2024",
         "amount": 73438,
         "product_ID": 889056,
@@ -532,7 +532,7 @@ function Invoices() {
         "id": 64
     },
     {
-        "customer_name": "Sebastian Katherine",
+        "customer_name": "Saul Katherine",
         "date": "06/02/2024",
         "amount": 86133,
         "product_ID": 928998,
@@ -708,7 +708,7 @@ function Invoices() {
         "id": 86
     },
     {
-        "customer_name": "Sebastian Cora",
+        "customer_name": "Saul Cora",
         "date": "03/09/2024",
         "amount": 71673,
         "product_ID": 351827,
@@ -820,10 +820,6 @@ function Invoices() {
   const [displayedInvoices, setDisplayedInvoices] = useState<InvoiceType[]>(selectedInvoices.filter((invoice) => invoice.id < length));
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  function randomNumber(){
-    return Math.floor(Math.random() * 10) + 1;
-  }
-
   function goForward(){
     console.log(`currentIndex is ${currentIndex}`);
     console.log(`Length is ${length}`);
@@ -842,7 +838,7 @@ function Invoices() {
     setCurrentIndex(currentIndex + length);
     setDisplayedInvoices(tempDisplayedInvoices);
   }
-
+ 
   function goBackward(){
     let tempDisplayedInvoices = selectedInvoices.filter((_, index) => {
         if(index < currentIndex - length && index >= (currentIndex - length - length)){
@@ -940,7 +936,7 @@ function Invoices() {
               <td>{invoice.date}</td>
               <td>{invoice.amount}</td>
               <td>{invoice.product_ID}</td>
-              <td>{invoice.status}</td>
+              <td className={invoice.status}><span>{invoice.status}</span></td>
               <td>more</td>
             </tr>
           })
@@ -949,7 +945,7 @@ function Invoices() {
 
       <div className="pagination-cont">
         {!(currentIndex <= length) && <button className="previous-button" onClick={() => goBackward()}>{"<"} Prev</button>}
-        <div className="pages">{Math.floor(currentIndex / length)}/{Math.ceil(selectedInvoices.length / length) }</div>
+        <div className="pages">{Math.floor(currentIndex / length)}/{Math.floor(selectedInvoices.length / length) }</div>
         {(currentIndex + length <= selectedInvoices.length) && <button className="next-button" onClick={() => goForward()}>Next {">"}</button>}
       </div>
     </div>
