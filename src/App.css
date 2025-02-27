@@ -457,6 +457,10 @@ main > div:not([class="utility-bar-cont"]){
   grid-column-gap: 20px;
 }
 
+.dashboard-container > div{
+  height: 100%;
+}
+
 /* DASHBOARD CONTAINER RESPONSIVENESS */
 @media screen and (max-width: 1150px) {
   .dashboard-container{
@@ -823,11 +827,12 @@ main > div:not([class="utility-bar-cont"]){
   align-items: center;
   position: relative;
   animation: slideUp 0.8s linear 0s 1 forwards;
+  margin-bottom: 10px;
 }
 
 .activity-legend-cont > div div{
-  width: 7px;
-  height: 7px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   margin-right: 5px;
 }
@@ -835,6 +840,7 @@ main > div:not([class="utility-bar-cont"]){
 .activity-legend-cont > div span:last-of-type{
   display: inline-block;
   margin-left: auto;
+  padding-left: 10px;
   font-size: 14px;
 }
 
@@ -880,6 +886,10 @@ main > div:not([class="utility-bar-cont"]){
   margin-bottom: 10px;
 }
 
+#analytical-chart{
+  max-width: 100%;
+}
+
 .analytical-graph{
   z-index: 5;
   position: relative;
@@ -889,6 +899,12 @@ main > div:not([class="utility-bar-cont"]){
 @media screen and (max-width: 580px) {
   .analytical-graph svg{
     height: 150px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .analytical-graph svg{
+    width: 100% !important;
   }
 }
 
