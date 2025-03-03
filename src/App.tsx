@@ -1,12 +1,12 @@
 import './App.css'
 import Sidebar from './components/Sidebar'
-import MainContainer from './components/MainContainer'
+import MainContainer from './pages/MainContainer'
 import UtilityBar from './components/UtilityBar'
-import Analytics from './components/Analytics'
-import Contacts from './components/Contacts'
-import Mail from './components/Mail'
-import Calendar from './components/Calendar'
-import Settings from './components/Settings'
+import Analytics from './pages/Analytics'
+import Contacts from './pages/Contacts'
+import Mail from './pages/Mail'
+import CalendarPage from './pages/CalendarPage'
+import Settings from './pages/Settings'
 import { useState, useEffect } from 'react'
 
 function App() {
@@ -38,7 +38,7 @@ function App() {
         {currentPage === "Analytics" && <Analytics />}
         {currentPage === "Contacts" && <Contacts />}
         {currentPage === "Mail" && <Mail />}
-        {currentPage === "Calendar" && <Calendar />}
+        {currentPage === "Calendar" && <CalendarPage />}
         {currentPage === "Settings" && <Settings />}
       </main>
     </div>

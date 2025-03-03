@@ -1,9 +1,8 @@
-import React from 'react'
-import Invoices from './Invoices'
-import SalesReport from './SalesReport'
-import Activity from './Activity'
-import AnalyticalAi from './AnalyticalAi'
-import Profit from './Profit'
+import Invoices from '../components/Invoices'
+import SalesReport from '../components/SalesReport'
+import Activity from '../components/Activity'
+import AnalyticalAi from '../components/AnalyticalAi'
+import Profit from '../components/Profit'
 
 function MainContainer({width}: {width: number}) {
   return (

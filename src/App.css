@@ -1406,6 +1406,59 @@ main > div:not([class="utility-bar-cont"]){
   width: 16px;
 }
 
+
+
+/* SELECT COMPONENT STYLES START */
+
+.select-cont{
+  position: relative;
+  border: 1px solid green;
+  width: fit-content;
+}
+
+.select-selected{
+  border: 1px solid red;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.select-options-cont{
+  border: 1px solid yellow;
+  width: fit-content;
+  position: absolute;
+  background-color: var(--background-color);
+}
+
+.select-option{
+  padding: 5px 10px;
+}
+
+/* SELECT COMPONENT STYLES END */
+
+
+/* CALENDAR COMPONENT STYLES START */
+
+.calendar-comp-header select{
+  background-color: transparent;
+  padding: 5px;
+  color: var(--primary-font-color);
+  font-family: var(--primary-font);
+  outline: none;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+
+.calendar-comp-header option{
+  color: var(--primary-font-color);
+  background-color: var(--component-bg-color);
+  border-radius: 5px;
+  scrollbar-width: 0 !important;
+  scrollbar-gutter: 0 !important;
+  height: 100px;
+}
+
+/* CALENDAR COMPONENT STYLES END */
+
 /* @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
