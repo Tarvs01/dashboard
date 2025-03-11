@@ -10,6 +10,11 @@
   src: url(../src/assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
 }
 
+@font-face {
+  font-family: poppins;
+  src: url(../src/assets/fonts/Poppins-Medium.ttf);
+}
+
 :root{
   --svg-icon-color: #7c7d7f;
   --component-bg-color: #2f2f33;
@@ -17,6 +22,7 @@
   --dark-gray-text: #8d8b8b;
   --component-border-radius: 20px;
   --primary-font: inter, sans-serif;
+  --poppins: poppins, sans-serif;
   --component-padding: 1.5rem 2rem;
   --primary-font-color: #ffffff;
   --primary-button-bg: #444546;
@@ -33,6 +39,20 @@ body{
   color: var(--primary-font-color);
   background-color: var(--background-color);
 
+}
+
+button{
+  width: fit-content;
+  font-family: var(--primary-font);
+  padding: 10px 10px;
+  border-radius: 7px;
+  border: none;
+  box-shadow: var(--primary-button-box-shadow);
+  position: relative;
+}
+
+button:active{
+  top: 3px;
 }
 
 .container > div, .container > aside{
@@ -1438,6 +1458,19 @@ main > div:not([class="utility-bar-cont"]){
 
 /* CALENDAR COMPONENT STYLES START */
 
+.calendar-comp-cont{
+  max-width: 400px; /* Modify this when working on the calendar page */
+  padding: var(--component-padding);
+  box-shadow: var(--component-box-shadow);
+  border-radius: var(--component-border-radius);
+  background-color: var(--component-bg-color);
+}
+
+.calendar-comp-header{
+  display: flex;
+  justify-content: space-between;
+}
+
 .calendar-comp-header select{
   background-color: transparent;
   padding: 5px;
@@ -1455,6 +1488,174 @@ main > div:not([class="utility-bar-cont"]){
   scrollbar-width: 0 !important;
   scrollbar-gutter: 0 !important;
   height: 100px;
+}
+
+.calendar-comp-header button{
+  background-color: transparent;
+  border: none;
+  color: var(--primary-font-color);
+  font-family: var(--primary-font);
+}
+
+.calendar-dates-cont{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-dates-cont > div{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-dates-cont span{
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.day-date{
+  cursor: pointer;
+}
+
+.gray{
+  color: gray;
+  background-color: transparent !important;
+}
+
+.event-registered{
+  background-color: yellow;
+  color: #000000;
+}
+
+.events-modal-cont{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .8);
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(3px);
+}
+
+.events-modal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-100%, -50%);
+  width: 400px;
+  background-color: var(--component-bg-color);
+  padding: var(--component-padding);
+  border-radius: var(--component-border-radius);
+  box-shadow: var(--component-box-shadow);
+}
+
+.events-cancel{
+  display: flex;
+}
+
+.events-cancel button{
+  background-color: red;
+  padding: 5px 8px !important;
+  display: flex;
+  margin-left: auto;
+}
+
+.events-cancel svg{
+  width: 15px;
+  fill: var(--fill-one);
+}
+
+.events-modal h3{
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 23px;
+}
+
+.events-container{
+  list-style-type: none;
+}
+
+.events-container li{
+  display: flex;
+  align-items: center;
+  box-shadow: var(--component-box-shadow);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.events-container li > div{
+  display: flex;
+  align-items: center;
+}
+
+.events-container li > div > div{
+  display: flex;
+  align-items: center;
+}
+
+.events-container span{
+  background-color: var(--background-color);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 11px;
+  margin-left: auto;
+}
+
+.events-container svg{
+  width: 13px;
+  fill: var(--fill-one);
+  margin: auto 0;
+  margin-left: 6px;
+  cursor: pointer;
+}
+
+.new-event{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.new-event > div{
+  width: 100%;
+}
+
+.new-event textarea{
+  background-color: transparent;
+  width: 100%;
+  color: var(--primary-font-color);
+  font-family: var(--primary-font);
+  font-size: 16px;
+  padding: 3px;
+}
+
+.new-event textarea:focus{
+  outline: none;
+}
+
+.new-event .input-cont{
+  margin-bottom: 5px;
+  display: flex;
+}
+
+.new-event .input-cont label{
+  display: block;
+  padding-left: 5px;
+}
+
+.new-event button{
+  margin-top: 10px;
 }
 
 /* CALENDAR COMPONENT STYLES END */
