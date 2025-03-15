@@ -7,10 +7,11 @@ import Contacts from './pages/Contacts'
 import Mail from './pages/Mail'
 import CalendarPage from './pages/CalendarPage'
 import Settings from './pages/Settings'
+import Products from './pages/Products'
 import { useState, useEffect } from 'react'
 
 function App() {
-  type pages = "Dashboard" | "Analytics" | "Contacts" | "Mail" | "Calendar" | "Settings";
+  type pages = "Dashboard" | "Analytics" | "Contacts" | "Mail" | "Calendar" | "Products" | "Settings";
   const [currentPage, setCurrentPage] = useState<pages>("Dashboard");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -39,6 +40,7 @@ function App() {
         {currentPage === "Contacts" && <Contacts />}
         {currentPage === "Mail" && <Mail />}
         {currentPage === "Calendar" && <CalendarPage />}
+        {currentPage === "Products" && <Products />}
         {currentPage === "Settings" && <Settings />}
       </main>
     </div>
