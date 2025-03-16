@@ -1786,6 +1786,24 @@ main > div:not([class="utility-bar-cont"]){
   margin-top: 10px;
 }
 
+@media screen and (max-width: 1172px) {
+  .products-cont{
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 835px) {
+  .products-cont{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .products-cont{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .product-cont{
   display: flex;
   flex-direction: column;
@@ -1824,6 +1842,7 @@ main > div:not([class="utility-bar-cont"]){
 .product-action-cont{
   display: flex;
   margin-top: 10px;
+  flex-wrap: wrap;
 }
 
 .product-action-cont button{
@@ -1833,6 +1852,7 @@ main > div:not([class="utility-bar-cont"]){
   background-color: var(--background-color);
   color: var(--fill-one);
   fill: var(--fill-one);
+  margin-bottom: 5px;
 }
 
 .product-action-cont svg{
