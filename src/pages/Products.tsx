@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from 'react'
+import { useState, ChangeEvent, FormEvent } from 'react'
 
 type Categories = "Foodstuffs" | "Cosmetics" | "Appliances" | "Accessories"
 
@@ -136,9 +136,20 @@ function Products() {
 
   const [allProducts, setAllProducts] = useState<ProductType[]>(baseProducts);
   const [displayedProducts, setDisplayedProducts] = useState<ProductType[]>(allProducts);
-  const [filter, setFilter] = useState<Categories | "All">("All")
+  const [filter, setFilter] = useState<Categories | "All">("All");
+  const [openProductModal, setOpenProductModal] = useState("");
+  const [singleProduct, setSingleProduct] = useState<ProductType>({
+    name: "",
+    price: 0,
+    tags: [],
+    category: categories[0],
+    stock: 0,
+    image: "",
+    id: allProducts.slice(-1)[0].id + 1
+  });
+  const [currentTag, setCurrentTag] = useState("");
 
-  function handleSelectChange(e: ChangeEvent<HTMLSelectElement>){
+  function handleCategorySelectChange(e: ChangeEvent<HTMLSelectElement>){
     if(e.target.value === "All"){
       setAllProducts(baseProducts);
       setFilter("All");
@@ -149,10 +160,148 @@ function Products() {
       setFilter(e.target.value as Categories); //Had no other choice. Could only typecast to fix the type issue.
     }
   }
+
+  function handleEditCategorySelectChange(e: ChangeEvent<HTMLSelectElement>){
+    setSingleProduct({...singleProduct, category: e.target.value as Categories});
+  }
+
+  function handleInputChange(e: FormEvent<HTMLInputElement>, prop: string){
+    if(prop === "name"){
+      if(e.currentTarget.value.trim() !== ""){
+        setSingleProduct({...singleProduct, name: e.currentTarget.value});
+      }
+    }
+    else if(prop === "price"){
+      let tempPrice = Number(e.currentTarget.value);
+      setSingleProduct({...singleProduct, price: tempPrice})
+    }
+    else if(prop === "stock"){
+      let tempStock = Number(e.currentTarget.value);
+      setSingleProduct({...singleProduct, stock: tempStock});
+    }
+    else if(prop === "tag"){
+      if(e.currentTarget.value.trim() !== ""){
+        setCurrentTag(e.currentTarget.value);
+      }
+    }
+    else{
+      console.log("Possible image");
+      console.log(e.currentTarget.files);
+    }
+  }
+
+  function addTag(){
+    if(currentTag !== ""){
+      setSingleProduct({...singleProduct, tags: [...singleProduct.tags, currentTag]});
+      setCurrentTag("");
+    }
+  }
+
+  function deleteTag(tagID: number){
+    let newTags = singleProduct.tags.filter((_, index) => tagID !== index);
+    setSingleProduct({...singleProduct, tags: newTags});
+  }
+
+  function setProductChange(state = undefined){
+    if(state == undefined){
+      let currentState: ProductType = {
+        name: "",
+        price: 0,
+        tags: [],
+        category: categories[0],
+        stock: 0,
+        image: "",
+        id: allProducts.slice(-1)[0].id + 1
+      };
+      setSingleProduct(currentState);
+    }
+    else{
+      let currentState = allProducts.filter((product) => product.id === state)[0];
+      setSingleProduct(currentState);
+    }
+  }
+
+  function handleFormSubmit(e: FormEvent){
+    e.preventDefault();
+  }
+
+  function addNewProduct(){
+    const tempSingleProduct: ProductType = JSON.parse(JSON.stringify(singleProduct));
+    let tempAllProducts = [...allProducts, tempSingleProduct];
+    setAllProducts(tempAllProducts);
+
+    if(filter === "All"){
+      setDisplayedProducts(tempAllProducts);
+    }
+    else{
+      let tempDisplayedProducts = tempAllProducts.filter((prod) => prod.category === filter);
+      setDisplayedProducts(tempDisplayedProducts);
+    }
+    
+    setOpenProductModal("");
+  }
+
+  function editProduct(){
+    ;
+  }
+
   return (
-    <div>
+    <div id='products-page'>
+      {openProductModal && <div className="product-modal-cont">
+        <form className="product-modal" onClick={(e) => e.stopPropagation()} onSubmit={handleFormSubmit}>
+          <h2>{openProductModal === "new" ? "Add new product" : "Edit product"}</h2>
+          <label htmlFor="name">Product Name</label>
+          <input type="text" name="name" id="name" required value={singleProduct.name} onInput={(e) => handleInputChange(e, "name")}/>
+
+          <label htmlFor="category">Category</label>
+          <select name="category" id="category" onChange={handleEditCategorySelectChange}>
+            {
+              categories.map((category, index) => {
+                return <option key={index} value={category} selected={singleProduct.category === category}>{category}</option>
+              })
+            }
+          </select>
+
+          <p>Tags</p>
+          <div className="tags-container">
+            <div className="tags-cont">
+              {
+                singleProduct.tags.map((tag, index) => {
+                  return <div key={index} className='single-tag'><span>{tag}</span><div onClick={() => deleteTag(index)}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></div></div>
+                })
+              }
+            </div>
+
+            <div className="tags-input-cont">
+              <input type="text" name="tags" id="tags" value={currentTag} onInput={(e) => handleInputChange(e, "tag")}/>
+              <div role='button' onClick={addTag}>Add</div>
+            </div>
+          </div>
+
+          <div className="nums-cont">
+            <div>
+              <label htmlFor="price">Price ($):</label>
+              <input type="number" min={0} name="price" id="price" value={String(singleProduct.price)} onInput={(e) => handleInputChange(e, "price")}/>
+            </div>
+
+            <div>
+              <label htmlFor="stock">Stock</label>
+              <input type="number" min={0} name="stock" id="stock" value={String(singleProduct.stock)} onInput={(e) => handleInputChange(e, "stock")}/>
+            </div>
+          </div>
+
+          <label htmlFor="image">Image</label>
+          <input type="file" name="image" id="image" onChange={(e) => handleInputChange(e, "image")} />
+
+          <div className="form-buttons">
+            <button onClick={() => setOpenProductModal("")}>Close Form</button>
+            <button onClick={openProductModal === "new" ? addNewProduct : editProduct}>Submit Form</button>
+          </div>
+        </form>
+      </div>}
+
       <div className="products-header">
-        <select name="categories" id="categories" className="product-categories" onChange={handleSelectChange}>
+        <select name="categories" id="categories" className="product-categories" onChange={handleCategorySelectChange}>
           <option value="All" selected>All</option>
           {
             categories.map((category, index) => {
@@ -160,6 +309,7 @@ function Products() {
             })
           }
         </select>
+        <button onClick={() => {setOpenProductModal("new"); setProductChange()}}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></svg><span>Add New</span></button>
       </div>
       
         <div className="products-cont">
