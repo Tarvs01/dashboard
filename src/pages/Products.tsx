@@ -148,6 +148,7 @@ function Products() {
     id: (allProducts.slice(-1)[0]?.id + 1) || 0
   });
   const [currentTag, setCurrentTag] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   function handleCategorySelectChange(e: ChangeEvent<HTMLSelectElement>){
     if(e.target.value === "All"){
@@ -285,6 +286,32 @@ function Products() {
     }
   }
 
+  function handleSearchChange(e: ChangeEvent<HTMLInputElement>){
+    setSearchTerm(e.target.value);
+    if(e.target.value.trim() !== ""){
+      let searchString = e.target.value.trim();
+      let matches = allProducts.filter((prod) => {
+        if(prod.name.toLowerCase().match(new RegExp(searchString.toLowerCase()))){
+          return true;
+        }
+
+        let tempState = false;
+        prod.tags.map((tag) => {
+          if(tag.toLowerCase().match(new RegExp(searchString.toLowerCase()))){
+            tempState = true;
+          }
+        });
+
+        return tempState;
+      });
+
+      setDisplayedProducts(matches);
+    }
+    else{
+      setDisplayedProducts(allProducts);
+    }
+  }
+
   return (
     <div id='products-page'>
       {openProductModal && <div className="product-modal-cont">
@@ -341,6 +368,7 @@ function Products() {
       </div>}
 
       <div className="products-header">
+        <input type="text" name="product-search" id="product-search" placeholder='Enter search term' value={searchTerm} onInput={handleSearchChange}/>
         <select name="categories" id="categories" className="product-categories" onChange={handleCategorySelectChange}>
           <option value="All" selected>All</option>
           {

@@ -74,6 +74,20 @@ option{
   height: 100px;
 }
 
+input{
+  background-color: transparent;
+  border: 1px solid gray;
+  font-family: var(--primary-font);
+  padding: 5px;
+  border-radius: 5px;
+  color: var(--primary-font-color);
+  font-size: 15px;
+}
+
+input:focus{
+  outline: 2px solid rgb(68, 68, 197);
+}
+
 .container > div, .container > aside{
   padding: 1rem 0;
 }
@@ -1718,6 +1732,13 @@ main > div:not([class="utility-bar-cont"]){
 .products-header{
   display: flex;
   align-items: center;
+  padding-left: 3px;
+  padding-top: 4px;
+}
+
+.products-header input{
+  margin-right: auto;
+  width: 50%;
 }
 
 .products-header select{
