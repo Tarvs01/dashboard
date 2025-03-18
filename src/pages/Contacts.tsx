@@ -1116,11 +1116,14 @@ let contacts: ContactType[] = [
   }
 ]
 
+type SortingType = "ascending" | "descending" | "oldest" | "newest";
+
 function Contacts() {
     const [allContacts, setAllContacts] = useState<ContactType[]>(contacts)
     const [displayedContacts, setDisplayedContacts] = useState<ContactType[]>(contacts);
     const [selectedContact, setSelectedContact] = useState<ContactType>({ID: 0, name: "", bio: "", email: "", phone: "", job: "",image: "", meetID: 0, gender: ""});
-    const [isSplitPageShown, setIsSplitPageShown] = useState<true | false>(false)
+    const [isSplitPageShown, setIsSplitPageShown] = useState<true | false>(false);
+    const [currentSort, setCurrentSort] = useState<SortingType>("oldest");
 
     function updateSelectedContact(id: number){
         setIsSplitPageShown(true);
@@ -1131,27 +1134,52 @@ function Contacts() {
     function HandleSelectChange(e: ChangeEvent<HTMLSelectElement>){
         console.log("select value is ", e.target.value);
         if(e.target.value == "ascending"){
-            let contactsCopy = [...contacts];
-            let tempContacts = contactsCopy.sort((a,b) => ("" + a.name).localeCompare(b.name));
-            setDisplayedContacts(tempContacts);
+            sortContacts(allContacts, "ascending");
         }
         else if(e.target.value == "descending"){
-            let contactsCopy = [...contacts];
-            let tempContacts = contactsCopy.sort((a,b) => ("" + b.name).localeCompare(a.name));
-            setDisplayedContacts(tempContacts);
+            sortContacts(allContacts, "descending");
         }
         else if(e.target.value == "newest"){
-            let contactsCopy = [...contacts];
-            let tempContacts = contactsCopy.reverse();
-            setDisplayedContacts(tempContacts);
+            sortContacts(allContacts, "newest");
         }
         else if(e.target.value == "oldest"){
-            setDisplayedContacts(contacts);
+            sortContacts(allContacts, "oldest");
+        }
+    }
+
+    function sortContacts(funcContacts: ContactType[] = allContacts ,sortItem : SortingType){
+        if(sortItem == "ascending"){
+            let contactsCopy = [...funcContacts];
+            let tempContacts = contactsCopy.sort((a,b) => ("" + a.name).localeCompare(b.name));
+            setDisplayedContacts(tempContacts);
+            setCurrentSort("ascending");
+        }
+        else if(sortItem == "descending"){
+            let contactsCopy = [...funcContacts];
+            let tempContacts = contactsCopy.sort((a,b) => ("" + b.name).localeCompare(a.name));
+            setDisplayedContacts(tempContacts);
+            setCurrentSort("descending");
+        }
+        else if(sortItem == "newest"){
+            let contactsCopy = [...funcContacts];
+            let tempContacts = contactsCopy.reverse();
+            setDisplayedContacts(tempContacts);
+            setCurrentSort("newest")
+        }
+        else if(sortItem == "oldest"){
+            setDisplayedContacts(funcContacts);
+            setCurrentSort("oldest");
         }
     }
 
     function deleteContact(contactID: number){
-        let dialogueValue;
+        if(!confirm("Are you sure you want to delete this contact")){
+            return;
+        }
+        let tempAllContacts = allContacts.filter((contact) => contact.ID !== contactID);
+        setAllContacts(tempAllContacts);
+        sortContacts(tempAllContacts, currentSort);
+        setIsSplitPageShown(false);
     }
 
   return (
