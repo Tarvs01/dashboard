@@ -149,6 +149,10 @@ function Products() {
   });
   const [currentTag, setCurrentTag] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
+  const [formErrors, setFormErrors] = useState({
+    name: "",
+    image: ""
+  })
 
   function handleCategorySelectChange(e: ChangeEvent<HTMLSelectElement>){
     if(e.target.value === "All"){
@@ -169,6 +173,7 @@ function Products() {
   function handleInputChange(e: FormEvent<HTMLInputElement>, prop: string){
     if(prop === "name"){
       if(e.currentTarget.value.trim() !== ""){
+        setFormErrors({...formErrors, name: ""});
         setSingleProduct({...singleProduct, name: e.currentTarget.value});
       }
       else{
@@ -192,6 +197,7 @@ function Products() {
       }
     }
     else if(prop === "image"){
+      setFormErrors({...formErrors, image: ""});
       let reader = new FileReader();
       reader.onloadend = () => setSingleProduct({...singleProduct, image: reader.result});
 
@@ -243,6 +249,18 @@ function Products() {
   }
 
   function addNewProduct(){
+    if(singleProduct.name.trim() === ""){
+      setFormErrors({...formErrors, name: "Enter a name"});
+      return;
+    }
+
+    if(singleProduct.image.trim() === ""){
+      setFormErrors({...formErrors, image: "Add an image"});
+      return;
+    }
+
+    setFormErrors({name: "", image: ""});
+
     const tempSingleProduct: ProductType = JSON.parse(JSON.stringify(singleProduct));
     let tempAllProducts = [...allProducts, tempSingleProduct];
     setAllProducts(tempAllProducts);
@@ -259,6 +277,18 @@ function Products() {
   }
 
   function editProduct(){
+    if(singleProduct.name.trim() === ""){
+      setFormErrors({...formErrors, name: "Enter a name"});
+      return;
+    }
+
+    if(singleProduct.image.trim() === ""){
+      setFormErrors({...formErrors, image: "Add an image"});
+      return;
+    }
+
+    setFormErrors({name: "", image: ""});
+
     const tempProduct: ProductType = JSON.parse(JSON.stringify(singleProduct));
     let tempAllProducts = allProducts.map((product) => {
       if(product.id === tempProduct.id){
@@ -282,6 +312,10 @@ function Products() {
   }
 
   function deleteProduct(productID: number){
+    if(!confirm("Are you sure you want to delete this product")){
+      return;
+    }
+
     let tempAllProducts: ProductType[] = JSON.parse(JSON.stringify(allProducts));
     tempAllProducts = tempAllProducts.filter((prod) => prod.id !== productID);
     setAllProducts(tempAllProducts);
@@ -327,6 +361,7 @@ function Products() {
         <form className="product-modal" onClick={(e) => e.stopPropagation()} onSubmit={handleFormSubmit}>
           <h2>{openProductModal === "new" ? "Add new product" : "Edit product"}</h2>
           <label htmlFor="name">Product Name</label>
+          {formErrors.name && <p className='form-error'>{formErrors.name}</p>}
           <input type="text" name="name" id="name" required value={singleProduct.name} onInput={(e) => handleInputChange(e, "name")}/>
 
           <label htmlFor="category">Category</label>
@@ -367,10 +402,11 @@ function Products() {
           </div>
 
           <p>Images</p>
+          {formErrors.image && <p className="form-error">{formErrors.image}</p>}
           <div className="form-image-cont">
             {singleProduct.image && <img src={String(singleProduct.image)} alt="product image" />}
             <label htmlFor="image" className='image-upload-label'>
-              <input type="file" name="image" id="image" onChange={(e) => handleInputChange(e, "image")} />
+              <input type="file" name="image" required id="image" onChange={(e) => handleInputChange(e, "image")} />
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128l-368 0zm79-217c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l39-39L296 392c0 13.3 10.7 24 24 24s24-10.7 24-24l0-134.1 39 39c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0l-80 80z"/></svg>
               <span>Upload</span>
             </label>

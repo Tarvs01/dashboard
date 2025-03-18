@@ -1830,6 +1830,10 @@ main > div:not([class="utility-bar-cont"]){
   padding: 10px;
 }
 
+.product-text-cont h4::first-letter{
+  text-transform: capitalize;
+}
+
 .product-text-cont .stock{
   font-weight: 400;
 }
@@ -2053,6 +2057,12 @@ main > div:not([class="utility-bar-cont"]){
 .product-modal button:first-of-type{
   margin-right: 20px;
   background-color: red;
+}
+
+.form-error{
+  color: red;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 /* PRODUCTS PAGE STYLES END */
