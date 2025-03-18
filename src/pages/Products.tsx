@@ -1,14 +1,13 @@
 import { useState, ChangeEvent, FormEvent } from 'react'
 
-type Categories = "Foodstuffs" | "Cosmetics" | "Appliances" | "Accessories"
-/* ENSURE YOU FIX THE IMAGE TYPE. LIKE REALLY ENSURE YOU DO. FOR REAL MAN. DO NOT FORGET */
+type Categories = "Foodstuffs" | "Cosmetics" | "Appliances" | "Accessories";
 interface ProductType{
   name: string,
   price: number,
   tags: string[],
   category: Categories,
   stock: number,
-  image: string | ArrayBuffer | null,
+  image: string,
   id: number
 }
 
@@ -199,7 +198,10 @@ function Products() {
     else if(prop === "image"){
       setFormErrors({...formErrors, image: ""});
       let reader = new FileReader();
-      reader.onloadend = () => setSingleProduct({...singleProduct, image: reader.result});
+      reader.onloadend = () => {
+        let newImg = typeof reader.result === "string" ? reader.result : ""; //Just to ensure that what is gotten back is a string and not null or ArrayBuffer
+        setSingleProduct({...singleProduct, image: newImg})
+      };
 
       let file = e.currentTarget.files ? e.currentTarget.files[0] : null;
       if(file){
