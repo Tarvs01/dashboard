@@ -1,7 +1,19 @@
 import { useState } from 'react'
 import { ChangeEvent } from 'react';
 
-let contacts = [
+interface ContactType{
+    ID: number;
+    name: string;
+    bio: string;
+    email: string;
+    phone: string;
+    job: string;
+    image: string;
+    meetID: number;
+    gender: string;
+}
+
+let contacts: ContactType[] = [
   {
       "ID": 0,
       "name": "Luke Sparrow",
@@ -1103,48 +1115,45 @@ let contacts = [
       "gender": "male"
   }
 ]
+
 function Contacts() {
-  const [displayedContacts, setDisplayedContacts] = useState(contacts);
-  const [selectedContact, setSelectedContact] = useState<{
-    ID: number;
-    name: string;
-    bio: string;
-    email: string;
-    phone: string;
-    job: string;
-    image: string;
-    meetID: number;
-    gender: string;
-}>({ID: 0, name: "", bio: "", email: "", phone: "", job: "",image: "", meetID: 0, gender: ""});
-const [isSplitPageShown, setIsSplitPageShown] = useState<true | false>(false)
+    const [allContacts, setAllContacts] = useState<ContactType[]>(contacts)
+    const [displayedContacts, setDisplayedContacts] = useState<ContactType[]>(contacts);
+    const [selectedContact, setSelectedContact] = useState<ContactType>({ID: 0, name: "", bio: "", email: "", phone: "", job: "",image: "", meetID: 0, gender: ""});
+    const [isSplitPageShown, setIsSplitPageShown] = useState<true | false>(false)
 
-function updateSelectedContact(id: number){
-    setIsSplitPageShown(true);
-    let tempContact = displayedContacts.filter((item) => item.ID === id)[0];
-    setSelectedContact(tempContact);
-}
+    function updateSelectedContact(id: number){
+        setIsSplitPageShown(true);
+        let tempContact = displayedContacts.filter((item) => item.ID === id)[0];
+        setSelectedContact(tempContact);
+    }
 
-function HandleSelectChange(e: ChangeEvent<HTMLSelectElement>){
-    console.log("select value is ", e.target.value);
-    if(e.target.value == "ascending"){
-        let contactsCopy = [...contacts];
-        let tempContacts = contactsCopy.sort((a,b) => ("" + a.name).localeCompare(b.name));
-        setDisplayedContacts(tempContacts);
+    function HandleSelectChange(e: ChangeEvent<HTMLSelectElement>){
+        console.log("select value is ", e.target.value);
+        if(e.target.value == "ascending"){
+            let contactsCopy = [...contacts];
+            let tempContacts = contactsCopy.sort((a,b) => ("" + a.name).localeCompare(b.name));
+            setDisplayedContacts(tempContacts);
+        }
+        else if(e.target.value == "descending"){
+            let contactsCopy = [...contacts];
+            let tempContacts = contactsCopy.sort((a,b) => ("" + b.name).localeCompare(a.name));
+            setDisplayedContacts(tempContacts);
+        }
+        else if(e.target.value == "newest"){
+            let contactsCopy = [...contacts];
+            let tempContacts = contactsCopy.reverse();
+            setDisplayedContacts(tempContacts);
+        }
+        else if(e.target.value == "oldest"){
+            setDisplayedContacts(contacts);
+        }
     }
-    else if(e.target.value == "descending"){
-        let contactsCopy = [...contacts];
-        let tempContacts = contactsCopy.sort((a,b) => ("" + b.name).localeCompare(a.name));
-        setDisplayedContacts(tempContacts);
+
+    function deleteContact(contactID: number){
+        let dialogueValue;
     }
-    else if(e.target.value == "newest"){
-        let contactsCopy = [...contacts];
-        let tempContacts = contactsCopy.reverse();
-        setDisplayedContacts(tempContacts);
-    }
-    else if(e.target.value == "oldest"){
-        setDisplayedContacts(contacts);
-    }
-}
+
   return (
     <div className='contacts-container'>
       <div className="contacts-header">
@@ -1206,7 +1215,7 @@ function HandleSelectChange(e: ChangeEvent<HTMLSelectElement>){
                 <div className="split-top-contacts">
                     <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M64 0C28.7 0 0 28.7 0 64L0 352c0 35.3 28.7 64 64 64l96 0 0 80c0 6.1 3.4 11.6 8.8 14.3s11.9 2.1 16.8-1.5L309.3 416 448 416c35.3 0 64-28.7 64-64l0-288c0-35.3-28.7-64-64-64L64 0z"/></svg><span>Message</span></button>
                     <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg></button>
-                    <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg></button>
+                    <button onClick={() => deleteContact(selectedContact.ID)}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg></button>
                 </div>
             </div>
         </div>
