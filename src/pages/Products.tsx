@@ -360,7 +360,7 @@ function Products() {
   return (
     <div id='products-page'>
       {openProductModal && <div className="product-modal-cont">
-        <form className="product-modal" onClick={(e) => e.stopPropagation()} onSubmit={handleFormSubmit}>
+        <form className="product-modal form-modal" onClick={(e) => e.stopPropagation()} onSubmit={handleFormSubmit}>
           <h2>{openProductModal === "new" ? "Add new product" : "Edit product"}</h2>
           <label htmlFor="name">Product Name</label>
           {formErrors.name && <p className='form-error'>{formErrors.name}</p>}
