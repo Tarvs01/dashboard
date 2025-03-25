@@ -10,7 +10,7 @@ interface ContactType{
     job: string;
     image: string;
     meetID: number;
-    gender: string;
+    gender: "male" | "female";
     twitter: string;
     facebook: string;
     discord: string;
@@ -1581,6 +1581,43 @@ function Contacts() {
         }
     }
 
+    function addContact(){
+        /* Any final error checking is to go here. */
+
+        const tempSingleContact: ContactType = JSON.parse(JSON.stringify(singleContact));
+        let tempAllContacts: ContactType[] = [...allContacts, tempSingleContact];
+        setAllContacts(tempAllContacts);
+
+        sortContacts(tempAllContacts, currentSort);
+
+        setOpenContactModal("");
+    }
+
+    function editContact(){
+        ;
+    }
+
+    function setContactChange(state: number | undefined = undefined){
+        if(state === undefined){
+            let currentState : ContactType = {
+                ID: (allContacts.slice(-1)[0]?.ID + 1) || 0, 
+                name: "", 
+                bio: "", 
+                email: "", 
+                phone: "", 
+                job: "",
+                image: "", 
+                meetID: 0, 
+                gender: "male", 
+                twitter: "", 
+                facebook: "", 
+                discord: "", 
+                reddit: ""
+            };
+            setSingleContact(currentState);
+        }
+    }
+
     function deleteContact(contactID: number){
         if(!confirm("Are you sure you want to delete this contact")){
             return;
@@ -1725,7 +1762,7 @@ function Contacts() {
 
                 <div className="form-buttons">
                     <button>Close</button>
-                    <button>Submit</button>
+                    <button onClick={openContactModal === "new" ? addContact : editContact}>Submit</button>
                 </div>
             </form>
         </section>}
@@ -1746,7 +1783,7 @@ function Contacts() {
         <input type="text" name="utility-search" id="utility-search" placeholder='Name or Email...' />
         </div>
 
-        <button className="new-contact" onClick={() => setOpenContactModal("new")}>
+        <button className="new-contact" onClick={() => {setOpenContactModal("new"); setContactChange()}}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></svg>
             <span>Add New</span>
         </button>
