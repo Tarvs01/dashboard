@@ -1378,6 +1378,9 @@ main > div:not([class="utility-bar-cont"]){
 .split-top img{
   border-radius: 10px;
   margin-right: 10px;
+  width: 100px;
+  aspect-ratio: 1/1;
+  max-height: 150px;
 }
 
 .split-top-info h4{
