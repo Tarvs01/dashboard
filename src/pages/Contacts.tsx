@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ChangeEvent } from 'react';
+import { ChangeEvent, FormEvent } from 'react';
 
 interface ContactType{
     ID: number;
@@ -1524,12 +1524,12 @@ type SortingType = "ascending" | "descending" | "oldest" | "newest";
 function Contacts() {
     const [allContacts, setAllContacts] = useState<ContactType[]>(contacts)
     const [displayedContacts, setDisplayedContacts] = useState<ContactType[]>(contacts);
-    const [selectedContact, setSelectedContact] = useState<ContactType>({ID: 0, name: "", bio: "", email: "", phone: "", job: "",image: "", meetID: 0, gender: "", twitter: "", facebook: "", discord: "", reddit: ""});
+    const [selectedContact, setSelectedContact] = useState<ContactType>({ID: 0, name: "", bio: "", email: "", phone: "", job: "",image: "", meetID: 0, gender: "male", twitter: "", facebook: "", discord: "", reddit: ""});
     const [isSplitPageShown, setIsSplitPageShown] = useState<true | false>(false);
     const [currentSort, setCurrentSort] = useState<SortingType>("oldest");
     const [openContactModal, setOpenContactModal] = useState<"new" | "edit" | "">("");
     const [formErrors, setFormErrors] = useState({name: "", image: ""});
-    const [singleContact, setSingleContact] = useState({ID: 0, name: "", bio: "", email: "", phone: "", job: "",image: "", meetID: 0, gender: "", twitter: "", facebook: "", discord: "", reddit: ""});
+    const [singleContact, setSingleContact] = useState<ContactType>({ID: 0, name: "", bio: "", email: "", phone: "", job: "",image: "", meetID: 0, gender: "male", twitter: "", facebook: "", discord: "", reddit: ""});
 
     const sampleJobs = ["Project Manager", "Product Owner", "Software Developer", "DevOps Engineer", "Frontend Developer", "Backend Developer", "QA Engineer", "Full Stack Developer", "UI/UX Designer", "System Architect"];
 
@@ -1591,8 +1591,70 @@ function Contacts() {
         setIsSplitPageShown(false);
     }
 
-    function handleInputChange(e: ChangeEvent<HTMLInputElement>, inputType: string){
-        ;
+    function handleInputChange(e: FormEvent<HTMLInputElement>, inputType: string){
+        if(inputType === "name"){
+            if(e.currentTarget.value.trim() !== ""){
+                setFormErrors({...formErrors, name: ""});
+                setSingleContact({...singleContact, name: e.currentTarget.value});
+            }
+            else{
+                setSingleContact({...singleContact, name: ""});
+            }
+        }
+        else if(inputType === "email"){
+            setSingleContact({...singleContact, email: e.currentTarget.value});
+        }
+        else if(inputType === "phone"){
+            let tempPhone = String(Number(e.currentTarget.value));
+            setSingleContact({...singleContact, phone: tempPhone});
+        }
+        else if(inputType === "job"){
+            if(e.currentTarget.value.trim() !== ""){
+                setSingleContact({...singleContact, job: e.currentTarget.value});
+            }
+            else{
+                setSingleContact({...singleContact, job: ""});
+            }
+        }
+        else if(inputType === "image"){
+            setFormErrors({...formErrors, image: ""});
+            let reader = new FileReader();
+            reader.onloadend = () => {
+                let newImg = typeof reader.result === "string" ? reader.result : ""; //Just to ensure that what is gotten back is a string and not null or ArrayBuffer
+                setSingleContact({...singleContact, image: newImg})
+            };
+
+            let file = e.currentTarget.files ? e.currentTarget.files[0] : null;
+            if(file){
+                reader.readAsDataURL(file);
+            }
+            else{
+                setSingleContact({...singleContact, image: ""});
+            }
+            console.log(e.currentTarget.files);
+        }
+        else if(inputType === "meet"){
+            let tempMeet = Number(e.currentTarget.value);
+            setSingleContact({...singleContact, meetID: tempMeet});
+        }
+        else if(inputType === "male"){
+            setSingleContact({...singleContact, gender: "male"});
+        }
+        else if(inputType === "female"){
+            setSingleContact({...singleContact, gender: "female"});
+        }
+        else if(inputType === "twitter"){
+            setSingleContact({...singleContact, twitter: e.currentTarget.value});
+        }
+        else if(inputType === "facebook"){
+            setSingleContact({...singleContact, facebook: e.currentTarget.value});
+        }
+        else if(inputType === "discord"){
+            setSingleContact({...singleContact, discord: e.currentTarget.value});
+        }
+        else if(inputType === "reddit"){
+            setSingleContact({...singleContact, reddit: e.currentTarget.value});
+        }
     }
 
   return (
@@ -1601,19 +1663,20 @@ function Contacts() {
             <form className="contact-modal form-modal">
             <h2>{openContactModal === "new" ? "Add new contact" : "Edit contact"}</h2>
                 <label htmlFor="name">Name</label>
-                <input type="text" name="name" id="name" />
+                {formErrors.name && <p className='form-error'>{formErrors.name}</p>}
+                <input type="text" name="name" id="name" required value={singleContact.name} onInput={(e) => handleInputChange(e, "name")}/>
 
                 <label htmlFor="email">Email</label>
-                <input type="email" name="email" id="email" />
+                <input type="email" name="email" id="email" required value={singleContact.email} onInput={(e) => handleInputChange(e, "email")} />
 
                 <label htmlFor="phone">Phone</label>
-                <input type="tel" name="phone" id="phone" />
+                <input type="number" name="phone" id="phone" min={1000000000} max={99999999999} required value={singleContact.phone} onInput={(e) => handleInputChange(e, "phone")}/>
 
                 <label htmlFor="bio">Bio</label>
-                <textarea name="bio" id="bio"></textarea>
+                <textarea name="bio" id="bio" required value={singleContact.bio} onInput={(e) => e.currentTarget.value.trim() === "" ? setSingleContact({...singleContact, bio: ""}) : setSingleContact({...singleContact, bio: e.currentTarget.value})}></textarea>
 
                 <label htmlFor="job">Position (job)</label>
-                <input type="text" name="job" id="job" list='joblist' />
+                <input type="text" name="job" id="job" list='joblist' required value={singleContact.job} onInput={(e) => handleInputChange(e, "job")} />
                 <datalist id='joblist'>
                     {
                         sampleJobs.map((job, index) => {
@@ -1634,31 +1697,31 @@ function Contacts() {
                 </div>
 
                 <label htmlFor="meet-ID">Meet ID</label>
-                <input type="number" name="meet-id" id="meet-ID" />
+                <input type="number" name="meet-id" id="meet-ID" value={String(singleContact.meetID)} onInput={(e) => handleInputChange(e, "meet")} />
 
                 <p>Sex</p>
                 <div className="sex-cont">
                     <div>
-                        <input type="radio" name="sex" id="sex-m" />
+                        <input type="radio" name="sex" id="sex-m" checked={singleContact.gender === "male"} onChange={(e) => handleInputChange(e, "male")} />
                         <label htmlFor="sex-m">Male</label>
                     </div>
                     <div>
-                        <input type="radio" name="sex" id="sex-f" />
+                        <input type="radio" name="sex" id="sex-f" checked={singleContact.gender === "female"} onChange={(e) => handleInputChange(e, "female")} />
                         <label htmlFor="sex-f">Female</label> 
                     </div> 
                 </div>
                 
                 <label htmlFor="twitter">Twitter</label>
-                <input type="text" name="twitter" id="twitter" />
+                <input type="text" name="twitter" id="twitter" value={singleContact.twitter} onInput={(e) => handleInputChange(e, "twitter")} />
 
                 <label htmlFor="facebook">Facebook</label>
-                <input type="text" name="facebook" id="facebook" />
+                <input type="text" name="facebook" id="facebook" value={singleContact.facebook} onInput={(e) => handleInputChange(e, "facebook")} />
 
                 <label htmlFor="discord">Discord</label>
-                <input type="text" name="discord" id="discord" />
+                <input type="text" name="discord" id="discord" value={singleContact.discord} onInput={(e) => handleInputChange(e, "discord")} />
 
                 <label htmlFor="reddit">Reddit</label>
-                <input type="text" name="reddit" id="reddit" />
+                <input type="text" name="reddit" id="reddit" value={singleContact.reddit} onInput={(e) => handleInputChange(e, "reddit")} />
 
                 <div className="form-buttons">
                     <button>Close</button>
