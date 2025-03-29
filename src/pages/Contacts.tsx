@@ -1594,7 +1594,21 @@ function Contacts() {
     }
 
     function editContact(){
-        ;
+        let tempContact: ContactType = JSON.parse(JSON.stringify(singleContact));
+        setSelectedContact(tempContact);
+        let tempAllContacts = allContacts.map((contact) => {
+            if(contact.ID === tempContact.ID){
+                return tempContact;
+            }
+            else{
+                return contact;
+            }
+        });
+        setAllContacts(tempAllContacts);
+
+        sortContacts(tempAllContacts, currentSort);
+
+        setOpenContactModal("");
     }
 
     function setContactChange(state: number | undefined = undefined){
@@ -1614,6 +1628,12 @@ function Contacts() {
                 discord: "", 
                 reddit: ""
             };
+            setSingleContact(currentState);
+        }
+        else{
+            let currentState = allContacts.filter((contact) => contact.ID === state)[0];
+            currentState = JSON.parse(JSON.stringify(currentState));
+            currentState.phone = currentState.phone.replace(/-/g, "");
             setSingleContact(currentState);
         }
     }
@@ -1725,7 +1745,7 @@ function Contacts() {
                 <p>Images</p>
                 {formErrors.image && <p className="form-error">{formErrors.image}</p>}
                 <div className="form-image-cont">
-                    {singleContact.image && <img src={singleContact.image} alt="product image" />}
+                    {singleContact.image && <img src={singleContact.image} alt="contact image" />}
                     <label htmlFor="image" className='image-upload-label'>
                     <input type="file" name="image" required id="image" onChange={(e) => handleInputChange(e, "image")} />
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128l-368 0zm79-217c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l39-39L296 392c0 13.3 10.7 24 24 24s24-10.7 24-24l0-134.1 39 39c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0l-80 80z"/></svg>
@@ -1826,6 +1846,7 @@ function Contacts() {
                 <div className="split-top-contacts">
                     <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M64 0C28.7 0 0 28.7 0 64L0 352c0 35.3 28.7 64 64 64l96 0 0 80c0 6.1 3.4 11.6 8.8 14.3s11.9 2.1 16.8-1.5L309.3 416 448 416c35.3 0 64-28.7 64-64l0-288c0-35.3-28.7-64-64-64L64 0z"/></svg><span>Message</span></button>
                     <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg></button>
+                    <button onClick={() => {setContactChange(selectedContact.ID); setOpenContactModal("edit")}}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg></button>
                     <button onClick={() => deleteContact(selectedContact.ID)}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg></button>
                 </div>
             </div>
