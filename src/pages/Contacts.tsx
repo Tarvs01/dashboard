@@ -1583,6 +1583,10 @@ function Contacts() {
 
     function addContact(){
         /* Any final error checking is to go here. */
+        //temporary error check paired with browser default
+        if(checkContact().status === false){
+            return;
+        }
 
         const tempSingleContact: ContactType = JSON.parse(JSON.stringify(singleContact));
         let tempAllContacts: ContactType[] = [...allContacts, tempSingleContact];
@@ -1712,6 +1716,34 @@ function Contacts() {
         else if(inputType === "reddit"){
             setSingleContact({...singleContact, reddit: e.currentTarget.value});
         }
+    }
+
+    function checkContact(){
+        if(singleContact.name.trim() === ""){
+            return {status: false, message: "There must be a name"};
+        }
+
+        if(singleContact.email.trim() === ""){
+            return {status: false, message: "There must be a valie email"};
+        }
+
+        if(Number(singleContact.phone) < 100000000){
+            return {status: false, message: "Enter a phone number"}
+        }
+
+        if(singleContact.bio.trim() === ""){
+            return {status: false, message: "Enter a bio"};
+        }
+
+        if(singleContact.job.trim() === ""){
+            return {status: false, message: "Enter a job"};
+        }
+
+        if(singleContact.image.trim() === ""){
+            return {status: false, message: "Enter a profile image"};
+        }
+
+        return {status: true, message: "No error detected"};
     }
 
   return (
