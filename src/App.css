@@ -1393,8 +1393,12 @@ main > div:not([class="utility-bar-cont"]){
   margin-top: 5px;
 }
 
+.split-top-contacts a{
+  height: fit-content;
+}
+
 .split-top-contacts button{
-  padding: 8px;
+  padding: 8px !important;
   border-radius: 5px;
   border: none;
   outline: none;
@@ -1412,7 +1416,7 @@ main > div:not([class="utility-bar-cont"]){
   font: var(--primary-font);
 }
 
-.split-top-contacts button:last-of-type{
+.split-top-contacts > button:last-of-type{
   background-color: #ff0000;
 }
 
@@ -1449,20 +1453,32 @@ main > div:not([class="utility-bar-cont"]){
   display: flex;
 }
 
-.contact-socials div{
-  margin-right: 5px;
-  fill: var(--fill-one);
-  background-color: var(--primary-button-bg);
-  box-shadow: var(--primary-button-box-shadow);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.no-socials{
+  display: none;
+}
+
+.contact-socials:not(:has(a)) .no-socials{
+  display: block;
+}
+
+.contact-socials button{
   padding: 8px;
-  border-radius: 7px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  margin-right: 5px;
+  display: inline-flex;
+  align-items: center;
+  background: var(--primary-button-bg);
+  box-shadow: var(--primary-button-box-shadow);
+  color: #ffffff;
+  cursor: pointer;
 }
 
 .contact-socials svg{
   width: 16px;
+  height: 16px;
+  fill: var(--fill-one);
 }
 
 .contacts-container{
