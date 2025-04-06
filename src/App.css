@@ -1485,9 +1485,11 @@ main > div:not([class="utility-bar-cont"]){
   position: relative;
 }
 
-.contacts-container:has(.contact-modal-cont) .contacts-main{
-  display: none;
-}
+/* .contacts-container:has(.contact-modal-cont) .contacts-main{
+  height: 0 !important;
+  overflow: hidden !important;
+  border: 2px solid yellow;
+} */
 
 .contact-modal-cont{
   width: 100%;
@@ -1497,6 +1499,11 @@ main > div:not([class="utility-bar-cont"]){
   top: 0;
   left: 0;
   z-index: 100;
+  overflow-y: scroll;
+}
+
+.contact-modal-cont::-webkit-scrollbar{
+  display: none;
 }
 
 .sex-cont{

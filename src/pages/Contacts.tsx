@@ -1813,7 +1813,7 @@ function Contacts() {
                 <input type="text" name="reddit" id="reddit" value={singleContact.reddit} onInput={(e) => handleInputChange(e, "reddit")} />
 
                 <div className="form-buttons">
-                    <button>Close</button>
+                    <button onClick={(e) => {e.preventDefault(); setOpenContactModal("")}}>Close</button>
                     <button onClick={openContactModal === "new" ? addContact : editContact}>Submit</button>
                 </div>
             </form>
