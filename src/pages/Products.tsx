@@ -131,6 +131,24 @@ function Products() {
       image: "../src/assets/images/product-images/wheelchair.jpg",
       id: 12
     },
+    {
+      name: "Lobster",
+      price: 470,
+      tags: ["shellfood", "luxury", "shellfish"],
+      category: "Foodstuffs",
+      stock: 259,
+      image: "../src/assets/images/product-images/lobster.jpg",
+      id: 13
+    },
+    {
+      name: "Almond Nuts",
+      price: 50,
+      tags: ["nuts", "fruit", "tree"],
+      category: "Foodstuffs",
+      stock: 9800,
+      image: "../src/assets/images/product-images/almond.jpg",
+      id: 14
+    },
   ];
 
   const [allProducts, setAllProducts] = useState<ProductType[]>(baseProducts);
