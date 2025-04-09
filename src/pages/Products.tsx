@@ -149,6 +149,393 @@ function Products() {
       image: "../src/assets/images/product-images/almond.jpg",
       id: 14
     },
+    {
+      name: "Toaster",
+      price: 140,
+      tags: ["Kitchen", "electronic", "utensil"],
+      category: "Appliances",
+      stock: 390,
+      image: "../src/assets/images/product-images/toaster.jpg",
+      id: 15
+    },
+    {
+      name: "Strawberries",
+      price: 10,
+      tags: ["fruit", "sweet", "fresh", "red"],
+      category: "Foodstuffs",
+      stock: 2050,
+      image: "../src/assets/images/product-images/strawberries.jpg",
+      id: 16
+    },
+    {
+      name: "Vacuum Cleaner",
+      price: 600,
+      tags: ["health", "cleaner", "electronic"],
+      category: "Appliances",
+      stock: 450,
+      image: "../src/assets/images/product-images/vacuum_cleaner.jpg",
+      id: 17
+    },
+    {
+      name: "Golden Ring",
+      price: 4500,
+      tags: ["jewellery", "gold", "luxury"],
+      category: "Accessories",
+      stock: 87,
+      image: "../src/assets/images/product-images/ring.jpg",
+      id: 18
+    },
+    {
+      name: "Carrot",
+      price: 13,
+      tags: ["vegetable", "fresh", "farm", "orange"],
+      category: "Foodstuffs",
+      stock: 3407,
+      image: "../src/assets/images/product-images/carrot.jpg",
+      id: 19
+    },
+    {
+      name: "Coconut",
+      price: 25,
+      tags: ["fruit", "nut", "tree", "fibre"],
+      category: "Foodstuffs",
+      stock: 1200,
+      image: "../src/assets/images/product-images/coconut.jpg",
+      id: 20
+    },
+    {
+      name: "Straw Hat",
+      price: 200,
+      tags: ["hat", "fashion", "headgear"],
+      category: "Accessories",
+      stock: 95,
+      image: "../src/assets/images/product-images/hat.jpg",
+      id: 21
+    },
+    {
+      name: "Lipstick",
+      price: 150,
+      tags: ["beauty", "pink"],
+      category: "Cosmetics",
+      stock: 58,
+      image: "../src/assets/images/product-images/lipstick.jpg",
+      id: 22
+    },
+    {
+      name: "Burger",
+      price: 13,
+      tags: ["fast food", "junk", "calorie", "meat"],
+      category: "Foodstuffs",
+      stock: 1008,
+      image: "../src/assets/images/product-images/burger.jpg",
+      id: 23
+    },
+    {
+      name: "Tomato",
+      price: 40,
+      tags: ["fruit", "red", "fresh", "farm"],
+      category: "Foodstuffs",
+      stock: 980,
+      image: "../src/assets/images/product-images/tomato.jpg",
+      id: 24
+    },
+    {
+      name: "Brown Belt",
+      price: 350,
+      tags: ["leather", "brown", "fashion", "men"],
+      category: "Accessories",
+      stock: 496,
+      image: "../src/assets/images/product-images/brown_belt.jpg",
+      id: 25
+    },
+    {
+      name: "Zucchini",
+      price: 30,
+      tags: ["vegetable", "plant", "yellow", "fresh"],
+      category: "Foodstuffs",
+      stock: 900,
+      image: "../src/assets/images/product-images/zucchini.jpg",
+      id: 26
+    }, 
+    {
+      name: "Tote Bag",
+      price: 45,
+      tags: ["handbag", "fashion", "light"],
+      category: "Accessories",
+      stock: 690,
+      image: "../src/assets/images/product-images/tote.jpg",
+      id: 27
+    },
+    {
+      name: "Brown Rice",
+      price: 60,
+      tags: ["grain", "crop", "farm"],
+      category: "Foodstuffs",
+      stock: 450,
+      image: "../src/assets/images/product-images/brown_rice.jpg",
+      id: 28
+    },
+    {
+      name: "Sandwich Maker",
+      price: 150,
+      tags: ["electronic", "toaster", "bread"],
+      category: "Appliances",
+      stock: 300,
+      image: "../src/assets/images/product-images/sandwich_maker.jpg",
+      id: 29
+    },
+    {
+      name: "Serrano Pepper",
+      price: 29,
+      tags: ["spice", "farm", "vegetable", "fruit", "green"],
+      category: "Foodstuffs",
+      stock: 680,
+      image: "../src/assets/images/product-images/serrano.jpg",
+      id: 30
+    },
+    {
+      name: "Silver Bangles",
+      price: 300,
+      tags: ["silver", "bracelet", "jewellery"],
+      category: "Accessories",
+      stock: 570,
+      image: "../src/assets/images/product-images/bangle.jpg",
+      id: 31
+    },
+    {
+      name: "Lemon",
+      price: 6,
+      tags: ["fruit", "sour", "tree", "citrus"],
+      category: "Foodstuffs",
+      stock: 900,
+      image: "../src/assets/images/product-images/lemon.jpg",
+      id: 32
+    },
+    {
+      name: "Neon Shoes",
+      price: 500,
+      tags: ["footwear", "lights", "fashion", "luxury"],
+      category: "Accessories",
+      stock: 700,
+      image: "../src/assets/images/product-images/neon_shoe.jpg",
+      id: 33
+    },
+    {
+      name: "Habanero Pepper",
+      price: 50,
+      tags: ["fruit", "vegetable", "spice", "orange", "farm"],
+      category: "Foodstuffs",
+      stock: 1500,
+      image: "../src/assets/images/product-images/habanero.jpg",
+      id: 34
+    },
+    {
+      name: "Black Belt",
+      price: 510,
+      tags: ["leather", "fashion", "buckle"],
+      category: "Accessories",
+      stock: 690,
+      image: "../src/assets/images/product-images/black_belt.jpg",
+      id: 35
+    },
+    {
+      name: "Radish",
+      price: 36,
+      tags: ["tuber", "vegetable", "root", "red"],
+      category: "Foodstuffs",
+      stock: 1704,
+      image: "../src/assets/images/product-images/radish.jpg",
+      id: 36
+    },
+    {
+      name: "Beauty Soap",
+      price: 270,
+      tags: ["bath", "clean", "beauty", "bubbles"],
+      category: "Cosmetics",
+      stock: 900,
+      image: "../src/assets/images/product-images/soap.jpg",
+      id: 37
+    },
+    {
+      name: "Banana",
+      price: 30,
+      tags: ["fruit", "berry", "farm", "sweet"],
+      category: "Foodstuffs",
+      stock: 1200,
+      image: "../src/assets/images/product-images/banana.jpg",
+      id: 38
+    },
+    {
+      name: "Shouzhu Bracelet",
+      price: 250,
+      tags: ["beads", "chinese"],
+      category: "Accessories",
+      stock: 590,
+      image: "../src/assets/images/product-images/shouzhu.jpg",
+      id: 39
+    },
+    {
+      name: "Pumpkin",
+      price: 100,
+      tags: ["vegetable", "farm", "orange"],
+      category: "Foodstuffs",
+      stock: 700,
+      image: "../src/assets/images/product-images/pumpkin.jpg",
+      id: 40
+    },
+    {
+      name: "Scarf",
+      price: 150,
+      tags: ["cloth", "luxury", "fashion"],
+      category: "Accessories",
+      stock: 430,
+      image: "../src/assets/images/product-images/scarf.jpg",
+      id: 41
+    },
+    {
+      name: "Walnut",
+      price: 25,
+      tags: ["nuts", "fruit", "plant", "farm"],
+      category: "Foodstuffs",
+      stock: 5000,
+      image: "../src/assets/images/product-images/walnut.jpg",
+      id: 42
+    },
+    {
+      name: "Electric Iron",
+      price: 200,
+      tags: ["electronic", "press"],
+      category: "Appliances",
+      stock: 390,
+      image: "../src/assets/images/product-images/electric_iron.jpg",
+      id: 43
+    },
+    {
+      name: "Potato Chips",
+      price: 20,
+      tags: ["snack", "potato", "junk", "fried"],
+      category: "Foodstuffs",
+      stock: 3600,
+      image: "../src/assets/images/product-images/potato_chips.jpg",
+      id: 44
+    },
+    {
+      name: "Handbag",
+      price: 350,
+      tags: ["fashion", "leather", "women"],
+      category: "Accessories",
+      stock: 680,
+      image: "../src/assets/images/product-images/handbag.jpg",
+      id: 45
+    },
+    {
+      name: "Dates",
+      price: 10,
+      tags: ["fruit", "tree", "orange"],
+      category: "Foodstuffs",
+      stock: 2900,
+      image: "../src/assets/images/product-images/dates.jpg",
+      id: 46
+    },
+    {
+      name: "Blender",
+      price: 200,
+      tags: ["electronic", "food", "sharp"],
+      category: "Appliances",
+      stock: 800,
+      image: "../src/assets/images/product-images/blender.jpg",
+      id: 47
+    },
+    {
+      name: "Honey",
+      price: 210,
+      tags: ["bees", "sweet", "orange", "natural"],
+      category: "Foodstuffs",
+      stock: 310,
+      image: "../src/assets/images/product-images/honey.jpg",
+      id: 48
+    },
+    {
+      name: "Sling Bag",
+      price: 150,
+      tags: ["leather", "fashion"],
+      category: "Accessories",
+      stock: 550,
+      image: "../src/assets/images/product-images/sling_bag.jpg",
+      id: 49
+    },
+    {
+      name: "Roulade",
+      price: 50,
+      tags: ["bread", "pastry", "dough"],
+      category: "Foodstuffs",
+      stock: 1400,
+      image: "../src/assets/images/product-images/roulade.jpg",
+      id: 50
+    },
+    {
+      name: "Makeup Kit",
+      price: 400,
+      tags: ["fashion", "beauty", "pink", "luxury"],
+      category: "Cosmetics",
+      stock: 300,
+      image: "../src/assets/images/product-images/makeup_kit.jpg",
+      id: 51
+    },
+    {
+      name: "Meat",
+      price: 550,
+      tags: ["chicken", "beef", "pork"],
+      category: "Foodstuffs",
+      stock: 962,
+      image: "../src/assets/images/product-images/meat.jpg",
+      id: 52
+    },
+    {
+      name: "Earring",
+      price: 660,
+      tags: ["fashion", "luxury", "jewellery"],
+      category: "Accessories",
+      stock: 1234,
+      image: "../src/assets/images/product-images/earring.jpg",
+      id: 53
+    },
+    {
+      name: "Cashew Nut",
+      price: 11,
+      tags: ["nuts", "fruit", "tree", "farm"],
+      category: "Foodstuffs",
+      stock: 6800,
+      image: "../src/assets/images/product-images/cashew_nut.jpg",
+      id: 54
+    },
+    {
+      name: "Electric Fan",
+      price: 250,
+      tags: ["electronic", "coolant", "fresh air"],
+      category: "Appliances",
+      stock: 2790,
+      image: "../src/assets/images/product-images/fan.jpg",
+      id: 55
+    },
+    {
+      name: "Bell Pepper",
+      price: 70,
+      tags: ["fruit", "vegetable", "spice", "fresh"],
+      category: "Foodstuffs",
+      stock: 910,
+      image: "../src/assets/images/product-images/bell_pepper.jpg",
+      id: 56
+    },
+    {
+      name: "Bow Tie",
+      price: 120,
+      tags: ["clothing", "corporate", "fashion"],
+      category: "Accessories",
+      stock: 700,
+      image: "../src/assets/images/product-images/bowtie.jpg",
+      id: 57
+    }
   ];
 
   const [allProducts, setAllProducts] = useState<ProductType[]>(baseProducts);
