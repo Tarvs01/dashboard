@@ -2119,6 +2119,15 @@ textarea:focus{
 
 /* PRODUCTS PAGE STYLES END */
 
+.error-page{
+  border: 1px solid green;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
 /* @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;

@@ -8,11 +8,11 @@ import Mail from './pages/Mail'
 import CalendarPage from './pages/CalendarPage'
 import Settings from './pages/Settings'
 import Products from './pages/Products'
+import Error from './pages/Error'
 import { useState, useEffect } from 'react'
 
 function App() {
-  type pages = "Dashboard" | "Analytics" | "Contacts" | "Mail" | "Calendar" | "Products" | "Settings";
-  const [currentPage, setCurrentPage] = useState<pages>("Dashboard");
+  const [currentPage, setCurrentPage] = useState("");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -30,6 +30,34 @@ function App() {
     return () => window.removeEventListener("resize", setSize);
   });
 
+  useEffect(() => {
+    let url = window.location.href;
+    console.log("url is", url);
+    let fullPath = new URL(url).pathname;
+    console.log("full path is ", fullPath);
+
+    //Remove this check if paths can be deeper
+    if(fullPath.split("/").length > 2){
+      setCurrentPage("Error");
+      return;
+    }
+
+    let path = fullPath.split("/")[1];
+    console.log("path is ", path);
+    if(path === ""){
+      setCurrentPage("Dashboard");
+    }
+    else{
+      setCurrentPage(path[0].toUpperCase() + path.slice(1));
+    }
+  }, []);
+
+  let pages = ["", "Dashboard", "Analytics", "Contacts", "Mail", "Calendar", "Products", "Settings"];
+  if(!pages.includes(currentPage)){
+    return (<Error />)
+  }
+
+  console.log("current page is ", currentPage);
   return (
     <div className='container'>
       <Sidebar setPage={setCurrentPage} isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen}/>
