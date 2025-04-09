@@ -127,7 +127,7 @@ function Products() {
       price: 1500,
       tags: ["paralyzed", "medical", "legs"],
       category: "Appliances",
-      stock: 90,
+      stock: 0,
       image: "../src/assets/images/product-images/wheelchair.jpg",
       id: 12
     },
@@ -535,6 +535,330 @@ function Products() {
       stock: 700,
       image: "../src/assets/images/product-images/bowtie.jpg",
       id: 57
+    },
+    {
+      name: "Blueberry",
+      price: 9,
+      tags: ["fruit", "blue", "berry", "black", "plant"],
+      category: "Foodstuffs",
+      stock: 4902,
+      image: "../src/assets/images/product-images/blueberry.jpg",
+      id: 58
+    },
+    {
+      name: "Phone Casing",
+      price: 60,
+      tags: ["iphone", "rubber", "cover"],
+      category: "Accessories",
+      stock: 1040,
+      image: "../src/assets/images/product-images/casing.jpg",
+      id: 59
+    },
+    {
+      name: "Hazelnut",
+      price: 15,
+      tags: ["fruit", "nut", "brown"],
+      category: "Foodstuffs",
+      stock: 3500,
+      image: "../src/assets/images/product-images/hazelnut.jpg",
+      id: 60
+    },
+    {
+      name: "Hairdryer",
+      price: 250,
+      tags: ["electronic", "heat", "hair"],
+      category: "Appliances",
+      stock: 580,
+      image: "../src/assets/images/product-images/hairdryer.jpg",
+      id: 61
+    },
+    {
+      name: "Black Beans",
+      price: 37,
+      tags: ["beans", "grain", "plant"],
+      category: "Foodstuffs",
+      stock: 4200,
+      image: "../src/assets/images/product-images/black_beans.jpg",
+      id: 62
+    },
+    {
+      name: "Electric Whisk",
+      price: 230,
+      tags: ["electronic", "mixer", "kitchen"],
+      category: "Appliances",
+      stock: 490,
+      image: "../src/assets/images/product-images/whisk.jpg",
+      id: 63
+    },
+    {
+      name: "Pistachio",
+      price: 10,
+      tags: ["nuts", "plant", "fruit"],
+      category: "Foodstuffs",
+      stock: 9800,
+      image: "../src/assets/images/product-images/pistachio.jpg",
+      id: 64
+    },
+    {
+      name: "Face Powder",
+      price: 170,
+      tags: ["beauty", "organic"],
+      category: "Cosmetics",
+      stock: 430,
+      image: "../src/assets/images/product-images/face_powder.jpg",
+      id: 65
+    },
+    {
+      name: "Artichoke",
+      price: 45,
+      tags: ["vegetable", "plant", "fresh"],
+      category: "Foodstuffs",
+      stock: 940,
+      image: "../src/assets/images/product-images/artichoke.jpg",
+      id: 66
+    },
+    {
+      name: "Boombox",
+      price: 670,
+      tags: ["music", "loud", "bass", "electronic"],
+      category: "Appliances",
+      stock: 2600,
+      image: "../src/assets/images/product-images/boombox.png",
+      id: 67
+    },
+    {
+      name: "Garlic",
+      price: 50,
+      tags: ["white", "vegetable", "spice"],
+      category: "Foodstuffs",
+      stock: 3280,
+      image: "../src/assets/images/product-images/garlic.jpg",
+      id: 68
+    },
+    {
+      name: "Clarifying Lotion",
+      price: 375,
+      tags: ["beauty", "skin", "cream"],
+      category: "Cosmetics",
+      stock: 880,
+      image: "../src/assets/images/product-images/cream.jpg",
+      id: 69
+    },
+    {
+      name: "Wheat",
+      price: 24,
+      tags: ["grain", "plant", "crop", "brown"],
+      category: "Foodstuffs",
+      stock: 5300,
+      image: "../src/assets/images/product-images/wheat.jpg",
+      id: 70
+    },
+    {
+      name: "Black Wallet",
+      price: 180,
+      tags: ["leather", "container", "safety"],
+      category: "Accessories",
+      stock: 402,
+      image: "../src/assets/images/product-images/black_wallet.jpg",
+      id: 71
+    },
+    {
+      name: "White Beans",
+      price: 30,
+      tags: ["grain", "plant", "legume"],
+      category: "Foodstuffs",
+      stock: 8200,
+      image: "../src/assets/images/product-images/white_beans.jpg",
+      id: 72
+    },
+    {
+      name: "Makeup Brush",
+      price: 150,
+      tags: ["brush", "beauty", "facial"],
+      category: "Cosmetics",
+      stock: 710,
+      image: "../src/assets/images/product-images/makeup_brushes.jpg",
+      id: 73
+    },
+    {
+      name: "Unripe Figs",
+      price: 28,
+      tags: ["fruit", "green", "plant", "fresh"],
+      category: "Foodstuffs",
+      stock: 1300,
+      image: "../src/assets/images/product-images/unripe_figs.jpg",
+      id: 74
+    },
+    {
+      name: "Cooking Utensils",
+      price: 420,
+      tags: ["spoon", "fork", "wood", "brown"],
+      category: "Appliances",
+      stock: 499,
+      image: "../src/assets/images/product-images/cooking_utensils.jpg",
+      id: 75
+    },
+    {
+      name: "Lentils",
+      price: 18,
+      tags: ["grain", "plant", "legume"],
+      category: "Foodstuffs",
+      stock: 4920,
+      image: "../src/assets/images/product-images/lentil.jpg",
+      id: 76
+    },
+    {
+      name: "Cigar",
+      price: 90,
+      tags: ["smoke", "cigarette", "tobacco"],
+      category: "Accessories",
+      stock: 870,
+      image: "../src/assets/images/product-images/cigar.jpg",
+      id: 77
+    },
+    {
+      name: "Black Pepper",
+      price: 16,
+      tags: ["spice", "black", "vegetable", "fruit"],
+      category: "Foodstuffs",
+      stock: 5070,
+      image: "../src/assets/images/product-images/black_pepper.jpg",
+      id: 78
+    },
+    {
+      name: "Blush",
+      price: 400,
+      tags: ["beauty", "powder", "facial"],
+      category: "Cosmetics",
+      stock: 630,
+      image: "../src/assets/images/product-images/blush.jpg",
+      id: 79
+    },
+    {
+      name: "Green Beans",
+      price: 32,
+      tags: ["green", "grain", "legume"],
+      category: "Foodstuffs",
+      stock: 3200,
+      image: "../src/assets/images/product-images/green_beans.jpg",
+      id: 80
+    },
+    {
+      name: "Brown Wallet",
+      price: 290,
+      tags: ["leather", "safety", "container"],
+      category: "Accessories",
+      stock: 598,
+      image: "../src/assets/images/product-images/brown_wallet.jpg",
+      id: 81
+    },
+    {
+      name: "Zircon Necklace",
+      price: 4800,
+      tags: ["jewellery", "luxury", "chain"],
+      category: "Accessories",
+      stock: 600,
+      image: "../src/assets/images/product-images/zircon.jpg",
+      id: 82
+    },
+    {
+      name: "Measuring Pan",
+      price: 130,
+      tags: ["kitchen", "flour", "baking"],
+      category: "Appliances",
+      stock: 840,
+      image: "../src/assets/images/product-images/measures.jpg",
+      id: 83
+    },
+    {
+      name: "Purse",
+      price: 300,
+      tags: ["women", "bag", "red", "leather"],
+      category: "Accessories",
+      stock: 820,
+      image: "../src/assets/images/product-images/purse.jpg",
+      id: 84
+    },
+    {
+      name: "Bath Balls",
+      price: 340,
+      tags: ["mint", "bath", "beauty", "soap"],
+      category: "Cosmetics",
+      stock: 1290,
+      image: "../src/assets/images/product-images/bath_balls.jpg",
+      id: 85
+    },
+    {
+      name: "Buttons",
+      price: 15,
+      tags: ["cloth", "connector"],
+      category: "Accessories",
+      stock: 3600,
+      image: "../src/assets/images/product-images/buttons.jpg",
+      id: 86
+    },
+    {
+      name: "Fragrance Oil",
+      price: 450,
+      tags: ["perfume", "beauty", "luxury"],
+      category: "Cosmetics",
+      stock: 374,
+      image: "../src/assets/images/product-images/fragrance.jpg",
+      id: 87
+    },
+    {
+      name: "Diamond Earring",
+      price: 8200,
+      tags: ["expensive", "luxury", "jewellery", "fashion"],
+      category: "Accessories",
+      stock: 10,
+      image: "../src/assets/images/product-images/diamond.jpg",
+      id: 88
+    },
+    {
+      name: "Refrigerator",
+      price: 500,
+      tags: ["coolant", "electronic", "kitchen"],
+      category: "Appliances",
+      stock: 180,
+      image: "../src/assets/images/product-images/refrigerator.jpg",
+      id: 89
+    },
+    {
+      name: "Female Shoes",
+      price: 280,
+      tags: ["footwear", "black", "fashion"],
+      category: "Accessories",
+      stock: 630,
+      image: "../src/assets/images/product-images/female_shoes.jpg",
+      id: 90
+    },
+    {
+      name: "Mascara",
+      price: 340,
+      tags: ["powder", "facial", "colors"],
+      category: "Cosmetics",
+      stock: 90,
+      image: "../src/assets/images/product-images/mascara.jpg",
+      id: 91
+    },
+    {
+      name: "Multipurpose Cooker",
+      price: 400,
+      tags: ["electronic", "heat", "stove"],
+      category: "Appliances",
+      stock: 0,
+      image: "../src/assets/images/product-images/stove.jpg",
+      id: 92
+    },
+    {
+      name: "Lux Scent",
+      price: 800,
+      tags: ["perfume", "fragrance", "luxury", "beauty"],
+      category: "Cosmetics",
+      stock: 389,
+      image: "../src/assets/images/product-images/lux_scent.jpg",
+      id: 93
     }
   ];
 
