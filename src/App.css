@@ -1178,11 +1178,12 @@ main > div:not([class="utility-bar-cont"]){
   display: grid;
   grid-template-columns: 1fr 1fr;
   position: relative;
-}
-
-.contacts-main:has(.contacts-cont-split){
   height: 94%;
 }
+
+/* .contacts-main:has(.contacts-cont-split){
+  height: 94%;
+} */
 
 .contacts-cont{
   grid-column-start: 1;
