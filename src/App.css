@@ -1788,6 +1788,7 @@ main > div:not([class="utility-bar-cont"]){
   align-items: center;
   padding-left: 3px;
   padding-top: 4px;
+  margin-bottom: 10px;
 }
 
 .products-header input{
@@ -1832,12 +1833,21 @@ main > div:not([class="utility-bar-cont"]){
   text-wrap: nowrap;
 }
 
+.products-main{
+  height: 94%;
+  overflow-y: scroll;
+}
+
+.products-main::-webkit-scrollbar{
+  display: none;
+}
+
 .products-cont{
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   row-gap: 10px;
   column-gap: 10px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
 
 @media screen and (max-width: 1172px) {
@@ -1923,9 +1933,9 @@ main > div:not([class="utility-bar-cont"]){
   margin-right: 10px;
 }
 
-#products-page:has(.product-modal-cont) .products-cont{
+/* #products-page:has(.product-modal-cont) .products-cont{
   display: none;
-}
+} */
 
 .product-modal-cont{
   position: absolute;
@@ -1933,8 +1943,13 @@ main > div:not([class="utility-bar-cont"]){
   left: 0;
   background-color: var(--background-color);
   width: 100%;
-  height: 86vh;
+  height: 87vh;
   z-index: 10;
+  overflow-y: scroll;
+}
+
+.product-modal-cont::-webkit-scrollbar{
+  display: none;
 }
 
 .form-modal{
