@@ -457,11 +457,34 @@ main > div:not([class="utility-bar-cont"]){
   height: 35px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 5px;
+  /* padding: 5px; */
   border-radius: 10px;
   margin: 0 5px;
   cursor: pointer;
+  overflow: hidden;
+}
+
+.theme-cont{
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+  transition: all 0.3s linear;
+}
+
+.theme-cont > div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+}
+
+.light-theme{
+  left: 0;
+}
+
+.dark-theme{
+  left: -35px;
 }
 
 .util-square:last-of-type{
@@ -471,6 +494,8 @@ main > div:not([class="utility-bar-cont"]){
 
 .util-square svg{
   width: 17px;
+  display: inline-block;
+  margin: 0 auto;
 }
 
 .util-square-search{
