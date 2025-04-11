@@ -196,19 +196,20 @@ function Calendar() {
     setNewEventText(e.target.value);
   }
 
-  function collateEvents() {
+  //Change this function based on usage later. If there's a need tho
+  function collateEvents(selectedDay: number = modalOpenDay) {
     let eventsArray: { yearly: string[]; specific: string[] } = {
       yearly: [],
       specific: [],
     };
-    if (events[selectedMonth].yearly[modalOpenDay]) {
-      eventsArray.yearly = [...events[selectedMonth].yearly[modalOpenDay]];
+    if (events[selectedMonth].yearly[selectedDay]) {
+      eventsArray.yearly = [...events[selectedMonth].yearly[selectedDay]];
     }
 
     //Modify this when you implement the specific year events
-    if (events[selectedMonth].specific[modalOpenDay]?.[selectedYear]) {
+    if (events[selectedMonth].specific[selectedDay]?.[selectedYear]) {
       eventsArray.specific = [
-        ...events[selectedMonth].specific[modalOpenDay][selectedYear],
+        ...events[selectedMonth].specific[selectedDay][selectedYear],
       ];
     }
 
@@ -293,6 +294,8 @@ function Calendar() {
 
     return false;
   }
+  console.log("calling colate events");
+  console.log(collateEvents())
 
   return (
     <div className="calendar-comp-cont">
@@ -476,7 +479,7 @@ function Calendar() {
       <div className="calendar-dates-cont">
         {days.map((day, index) => {
           return (
-            <div>
+            <div className="days-header">
               <span key={index}>{day}</span>
             </div>
           );
@@ -484,7 +487,7 @@ function Calendar() {
 
         {calculateDays().map((day, index) => {
           return (
-            <div key={index} className="dates-cont" 
+            <div key={index} className={`dates-cont ${todaysDate(day) ? "today-large" : ""}`} 
             onClick={(e) => {
                 if (index + 1 < day) {
                   e.stopPropagation();
@@ -505,6 +508,22 @@ function Calendar() {
               >
                 {day}
               </span>
+              <div className="todays-events-cont">
+                {
+                  [...(collateEvents(day).specific), ...(collateEvents(day).yearly)].slice(0,2).map((singleEvent, index) => {
+                    return <div key={index} className="todays-event">
+                      <div className="event-bar" style={{backgroundColor: colors[(day + index) % colors.length]}}></div>
+                      <p>{singleEvent}</p>
+                    </div>
+                  })
+                }
+                <p>{[...(collateEvents(day).specific), ...(collateEvents(day).yearly)].length > 2 ? `+${[...(collateEvents(day).specific), ...(collateEvents(day).yearly)].length - 2} events` : ""}</p>
+              </div>
+
+              {([...(collateEvents(day).specific), ...(collateEvents(day).yearly)].length > 0) && <p className="total-events-today">
+                <div className="event-bar" style={{backgroundColor: colors[(day + index) % colors.length]}}></div>
+                <p>{`${[...(collateEvents(day).specific), ...(collateEvents(day).yearly)].length} events`}</p>
+              </p>}
             </div>
           );
         })}

@@ -1548,7 +1548,7 @@ main > div:not([class="utility-bar-cont"]){
 /* CALENDAR COMPONENT STYLES START */
 
 .calendar-comp-cont{
-  max-width: 400px; /* Modify this when working on the calendar page */
+  /* max-width: 400px; */ /* Modify this when working on the calendar page */
   padding: var(--component-padding);
   box-shadow: var(--component-box-shadow);
   border-radius: var(--component-border-radius);
@@ -1589,20 +1589,152 @@ main > div:not([class="utility-bar-cont"]){
 .calendar-dates-cont{
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+  grid-gap: 10px;
 }
 
-.calendar-dates-cont > div{
+.days-header{
   text-align: center;
   text-transform: uppercase;
-  font-size: 14px;
-  margin-bottom: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.calendar-dates-cont > div{
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
 .dates-cont{
   position: relative;
+  height: 100px;
+  box-shadow: var(--component-box-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  cursor: pointer;
+}
+
+/* .today-large{
+  border-left: 3px solid rgb(226, 38, 38);
+  border-right: 3px solid rgb(214, 39, 214);
+  border-top: 3px solid rgb(72, 226, 72);
+  border-bottom: 3px solid rgb(51, 51, 194);
+  border-radius: 8px;
+  padding: 2px;
+} */
+
+/* @property --bg-angle{
+  inherits: false;
+  initial-value: 0deg;
+  syntax: "<angle>";
+}
+
+@keyframes spin {
+  to{
+    --bg-angle: 360deg;
+  }
+}
+
+.today-large{
+  animation: spin 2s linear 0s infinite forwards;
+  background: linear-gradient(to bottom, oklch(0.1 0.2 240 / 0.95), oklch(0.1 0.2 240 / 0.95)) padding-box, conic-gradient(from var(--bg-angle) in oklch longer hue, oklch(0.85 0.37 0) 0 0) border-box;
+  border: 3px solid transparent;
+  border-radius: 4px;
+  padding: 1px;
+} */
+
+@property --border-angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.today-large{
+  --border-angle: 0deg;
+  animation: border-angle-rotate 2s linear 0s infinite forwards;
+  border: 3px solid transparent;
+  border-radius: 4px;
+  padding: 1px;
+  position: relative;
+  background: linear-gradient(var(--component-bg-color), var(--component-bg-color)) padding-box, conic-gradient(from var(--border-angle), oklch(100% 100% 0deg), oklch(100% 100% 45deg), oklch(100% 100% 90), oklch(100% 100% 135), oklch(100% 100% 180), oklch(100% 100% 225), oklch(100% 100% 270), oklch(100% 100% 315), oklch(100% 100% 360)) border-box;
+}
+
+@keyframes border-angle-rotate {
+  from{
+    --border-angle: 0deg;
+  }
+  to{
+    --border-angle: 360deg;
+  }
+}
+
+.todays-events-cont{
+  padding: 5px;
+  padding-bottom: 2px;
+}
+
+.total-events-today{
+  display: none;
+  align-items: center;
+  padding: 3px;
+}
+
+.total-events-today .event-bar{
+  height: 100%;
+}
+
+@media screen and (max-width: 730px) {
+  .todays-events-cont{
+    display: none;
+  }
+
+  .total-events-today{
+    display: flex;
+  }
+
+  .dates-cont{
+    height: 90px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .dates-cont{
+    height: fit-content;
+    box-shadow: none;
+    align-items: center;
+  }
+
+  .total-events-today{
+    display: none;
+  }
+
+  .today{
+    display: block !important;
+  }
+
+  .today-large{
+    border: none;
+  }
+}
+
+.todays-event{
+  display: flex;
+  margin-bottom: 2px;
+}
+
+.todays-event p{
+  width: 100%;
+  height: 20px;
+  overflow: hidden;
+}
+
+.event-bar{
+  background-color: yellow;
+  width: 3px;
+  height: 17px;
+  margin-right: 3px;
+  display: inline-block;
 }
 
 .calendar-dates-cont span{
@@ -1612,6 +1744,7 @@ main > div:not([class="utility-bar-cont"]){
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: auto;
 }
 
 .day-date{
@@ -1636,6 +1769,7 @@ main > div:not([class="utility-bar-cont"]){
   border-top: 3px solid rgb(72, 226, 72);
   border-bottom: 3px solid rgb(51, 51, 194);
   animation: rotate 1s linear 0s infinite forwards;
+  display: none;
 }
 
 @keyframes rotate {
