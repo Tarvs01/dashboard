@@ -58,8 +58,8 @@ function AnalyticalAi() {
               />
               <defs>
                     <linearGradient id="lineGradient" x1={0} x2={0} y1={0} y2={1}>
-                        <stop offset={`0%`} stopColor="#FFFFFF" />
-                        <stop offset={`91%`} stopColor="#2f2f33" />
+                        <stop offset={`0%`} id="stop-top"/>
+                        <stop offset={`91%`} id="stop-bottom"/>
                     </linearGradient>
                 </defs>
               <rect width={30} height={500} x={270} y={41} fill="url(#lineGradient)" stroke="transparent"/>

@@ -13,18 +13,28 @@ function UtilityBar({isSearchVisible, titleText, openSidebar, width}: UtilityBar
   function toggleMode(){
     if(mode === "dark"){
       document.documentElement.style.cssText = `
-      --svg-icon-color: #7c7d7f;
-      --component-bg-color: green;
+      --svg-icon-color: #000000;
+      --component-bg-color: #ffffff;
       --light-gray-text: #000000;
       --dark-gray-text: #8d8b8b;
       --component-border-radius: 20px;
       --primary-font: inter, sans-serif;
+      --poppins: poppins, sans-serif;
       --component-padding: 1.5rem 2rem;
-      --primary-font-color: #ffffff;
+      --primary-font-color: #000000;
       --primary-button-bg: #444546;
-      --primary-buttom-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-      --fill-one: #ffffff;
-      --background-color: #242529;
+      --primary-button-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      --component-box-shadow: #f2f4f5 0px 7px 29px 0px;
+      --fill-one: #000000;
+      --background-color: #f2f4f5;
+      --primary-outline: rgb(68, 68, 197);
+      --demarcator: #000000;
+      --links-hover: #b9b4b4;
+      --date-border: #f1efef;
+      --paid-color: rgb(20, 209, 20);
+      --unpaid-color: rgb(243, 10, 10);
+      --stop-color-top: #2f2f33;
+      --stop-color-bottom: #ffffff;
       `;
       setMode("light")
     }
@@ -36,12 +46,22 @@ function UtilityBar({isSearchVisible, titleText, openSidebar, width}: UtilityBar
       --dark-gray-text: #8d8b8b;
       --component-border-radius: 20px;
       --primary-font: inter, sans-serif;
+      --poppins: poppins, sans-serif;
       --component-padding: 1.5rem 2rem;
       --primary-font-color: #ffffff;
       --primary-button-bg: #444546;
-      --primary-buttom-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      --primary-button-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      --component-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       --fill-one: #ffffff;
       --background-color: #242529;
+      --primary-outline: rgb(68, 68, 197);
+      --demarcator: #ffffff;
+      --links-hover: #33353b;
+      --date-border: transparent;
+      --paid-color: rgb(175, 238, 175);
+      --unpaid-color: rgb(224, 150, 150);
+      --stop-color-top: #ffffff;
+      --stop-color-bottom: #2f2f33;
       `;
       setMode("dark")
     }
