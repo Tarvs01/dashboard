@@ -376,6 +376,7 @@ function Calendar() {
                   placeholder="Enter new event"
                   value={newEventText}
                   onInput={handleTextareaChange}
+                  autoFocus
                 ></textarea>
 
                 <div className="input-cont">
