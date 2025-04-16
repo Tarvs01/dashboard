@@ -1535,7 +1535,7 @@ main > div:not([class="utility-bar-cont"]){
 
 .contact-modal-cont{
   width: 100%;
-  height: 86vh;
+  height: 90vh;
   background-color: var(--background-color);
   position: absolute;
   top: 0;
@@ -2114,17 +2114,13 @@ main > div:not([class="utility-bar-cont"]){
   margin-right: 10px;
 }
 
-/* #products-page:has(.product-modal-cont) .products-cont{
-  display: none;
-} */
-
 .product-modal-cont{
   position: absolute;
   top: 0;
   left: 0;
   background-color: var(--background-color);
   width: 100%;
-  height: 87vh;
+  height: 90vh;
   z-index: 10;
   overflow-y: scroll;
 }
