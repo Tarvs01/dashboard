@@ -510,14 +510,14 @@ function Calendar() {
               </span>
               <div className="todays-events-cont">
                 {
-                  [...(collateEvents(day).specific), ...(collateEvents(day).yearly)].slice(0,2).map((singleEvent, index) => {
+                  [...(collateEvents(day).specific), ...(collateEvents(day).yearly)].slice(0,1).map((singleEvent, index) => {
                     return <div key={index} className="todays-event">
                       <div className="event-bar" style={{backgroundColor: colors[(day + index) % colors.length]}}></div>
                       <p>{singleEvent}</p>
                     </div>
                   })
                 }
-                <p>{[...(collateEvents(day).specific), ...(collateEvents(day).yearly)].length > 2 ? `+${[...(collateEvents(day).specific), ...(collateEvents(day).yearly)].length - 2} events` : ""}</p>
+                <p>{[...(collateEvents(day).specific), ...(collateEvents(day).yearly)].length > 1 ? `+${[...(collateEvents(day).specific), ...(collateEvents(day).yearly)].length - 1} events` : ""}</p>
               </div>
 
               {([...(collateEvents(day).specific), ...(collateEvents(day).yearly)].length > 0) && <p className="total-events-today">
