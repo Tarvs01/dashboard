@@ -4,7 +4,7 @@ import MainContainer from './pages/MainContainer'
 import UtilityBar from './components/UtilityBar'
 import Analytics from './pages/Analytics'
 import Contacts from './pages/Contacts'
-import Mail from './pages/Mail'
+import Notice from './pages/Notice'
 import CalendarPage from './pages/CalendarPage'
 import Settings from './pages/Settings'
 import Products from './pages/Products'
@@ -52,7 +52,7 @@ function App() {
     }
   }, []);
 
-  let pages = ["", "Dashboard", "Analytics", "Contacts", "Mail", "Calendar", "Products", "Settings"];
+  let pages = ["", "Dashboard", "Analytics", "Contacts", "Notice", "Calendar", "Products", "Settings"];
   if(!pages.includes(currentPage)){
     return (<Error />)
   }
@@ -66,7 +66,7 @@ function App() {
         {currentPage === "Dashboard" && <MainContainer width={windowWidth} />}
         {currentPage === "Analytics" && <Analytics />}
         {currentPage === "Contacts" && <Contacts />}
-        {currentPage === "Mail" && <Mail />}
+        {currentPage === "Notice" && <Notice />}
         {currentPage === "Calendar" && <CalendarPage />}
         {currentPage === "Products" && <Products />}
         {currentPage === "Settings" && <Settings />}

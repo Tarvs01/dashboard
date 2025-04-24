@@ -27,7 +27,7 @@
   --primary-font-color: #ffffff;
   --primary-button-bg: #444546;
   --primary-button-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  --component-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --component-box-shadow: #0000003d 0px 3px 8px;
   --fill-one: #ffffff;
   --background-color: #242529;
   --primary-outline: rgb(68, 68, 197);
@@ -38,6 +38,9 @@
   --unpaid-color: rgb(224, 150, 150);
   --stop-color-top: #ffffff;
   --stop-color-bottom: #2f2f33;
+  --others-message-background: #474646;
+  --your-message-background: #202852;
+  --notice-dept-color: #7878e4;
 }
 
 body{
@@ -2312,6 +2315,115 @@ textarea:focus{
 
 /* PRODUCTS PAGE STYLES END */
 
+/* NOTICE PAGE STYLES START */
+#notice{
+  position: relative;
+}
+
+.messages-cont{
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  overflow-y: scroll;
+}
+
+.messages-cont::-webkit-scrollbar{
+  background-color: transparent;
+  width: 10px;
+}
+
+.messages-cont::-webkit-scrollbar-thumb{
+  background-color: gray;
+  border-radius: 10px;
+}
+
+.message-cont{
+  background-color: var(--others-message-background);
+  padding: 10px;
+  width: fit-content;
+  max-width: 45%;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.message-cont .name{
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.message-cont .dept{
+  font-size: 14px;
+  color: var(--notice-dept-color);
+  font-weight: 600;
+}
+
+.message-cont .time{
+  margin-left: auto;
+  width: fit-content;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.message-cont .message{
+  white-space: pre-wrap;
+}
+
+.yours{
+  margin-left: auto;
+  margin-right: 20px;
+  background-color: var(--your-message-background);
+}
+
+.yours .name, .yours .dept{
+  text-align: end;
+}
+
+.message-input-cont{
+  width: 70%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.message-input-cont textarea{
+  height: 37px; /* if you change this value, also change it in the js. in the addNewMessage function */
+  width: 90%;
+  background-color: var(--background-color);
+  font-size: 16px;
+  color: var(--primary-font-color);
+  font: var(--primary-font);
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 5px;
+  max-height: 220px !important;
+}
+
+.message-input-cont textarea::-webkit-scrollbar{
+  background-color: transparent;
+  width: 10px;
+}
+
+.message-input-cont textarea::-webkit-scrollbar-thumb{
+  background-color: gray;
+  border-radius: 10px;
+}
+
+.send-button{
+  background-color: black;
+  height: 40px;
+}
+
+.send-button svg{
+  width: 20px;
+  fill: #ffffff;
+}
+
+
+/* NOTICE PAGE STYLES END */
 .error-page{
   border: 1px solid green;
   height: 100vh;

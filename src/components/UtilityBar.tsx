@@ -35,6 +35,9 @@ function UtilityBar({isSearchVisible, titleText, openSidebar, width}: UtilityBar
       --unpaid-color: rgb(243, 10, 10);
       --stop-color-top: #2f2f33;
       --stop-color-bottom: #ffffff;
+      --others-message-background: #c7cbce;
+      --your-message-background: #8a95cf;
+      --notice-dept-color: #1313cc;
       `;
       setMode("light")
     }
@@ -62,6 +65,9 @@ function UtilityBar({isSearchVisible, titleText, openSidebar, width}: UtilityBar
       --unpaid-color: rgb(224, 150, 150);
       --stop-color-top: #ffffff;
       --stop-color-bottom: #2f2f33;
+      --others-message-background: #474646;
+      --your-message-background: #202852;
+      --notice-dept-color: #7878e4;
       `;
       setMode("dark")
     }
