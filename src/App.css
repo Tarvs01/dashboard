@@ -2400,6 +2400,11 @@ textarea:focus{
   margin-right: 10px;
   border-radius: 5px;
   max-height: 220px !important;
+  border: 2px solid rgb(99, 97, 97);
+}
+
+.message-input-cont textarea:focus{
+  border-width: 1px;
 }
 
 .message-input-cont textarea::-webkit-scrollbar{
