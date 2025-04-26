@@ -1,41 +1,42 @@
 import {useState, ChangeEvent, useRef} from 'react'
 
 function Notice() {
+  let currentDate = new Date();
   const [messages, setMessages] = useState([
     {
       id: 0,
       msg: "We have marketing fliers available. Do ensure to come over and grab a bunch to spread the word about our geat company.",
       sender: "John Bull",
       department: "Marketing",
-      timeStamp: new Date()
+      timeStamp: new Date(currentDate.getUTCFullYear(), currentDate.getMonth(), currentDate.getDate() - 3, 5, 25, 1),
     },
     {
       id: 1,
       msg: "Sherry Arnold is having her baby shower next week tuesday by 5pm. You are all invited. It will be held at the company's reception. Bring your company ID card as your invitation.",
       sender: "Katie Woods",
       department: "HR",
-      timeStamp: new Date()
+      timeStamp: new Date(currentDate.getUTCFullYear(), currentDate.getMonth(), currentDate.getDate() - 3, 16, 39, 51)
     },
     {
       id: 2,
       msg: "Due to the carelessness of Pete, our systems got compromised. We have since revamped it and changed somethings. As a consequence of this, everyone will need new logins. The logins will need to be activated in person so drop by the IT room as soon as possible",
       sender: "you",
       department: "Information Tech",
-      timeStamp: new Date()
+      timeStamp: new Date(currentDate.getUTCFullYear(), currentDate.getMonth(), currentDate.getDate() - 2, 9, 5, 24)
     },
     {
       id: 3,
       msg: "The first batch of premium surprise boxes is ready. Employees get a 10% discount on every box bought. This offer lasts until next month so hurry down to the workshop to get yours.",
       sender: "Gherman Sparrow",
       department: "Manufacturing",
-      timeStamp: new Date()
+      timeStamp: new Date(currentDate.getUTCFullYear(), currentDate.getMonth(), currentDate.getDate() - 2, 13, 47, 0)
     },
     {
       id: 4,
       msg: "The toilets on the second floor are currently blocked. Please DO NOT USE THEM. If you need to use the restroom, use the ones on the other floors. Sorry for the inconvenience.",
       sender: "Sharon Shutterlid",
       department: "Health and Safety",
-      timeStamp: new Date()
+      timeStamp: new Date(currentDate.getUTCFullYear(), currentDate.getMonth(), currentDate.getDate() - 1, 15, 15, 10)
     }
   ])
   const [newMessage, setNewMessage] = useState("");
