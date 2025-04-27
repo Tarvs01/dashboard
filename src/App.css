@@ -2347,6 +2347,18 @@ textarea:focus{
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
+@media screen and (max-width: 700px) {
+  .message-cont{
+    max-width: 60%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .message-cont{
+    max-width: 90%;
+  }
+}
+
 .message-cont .name{
   font-weight: 600;
   text-transform: capitalize;
@@ -2387,6 +2399,12 @@ textarea:focus{
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+@media screen and (max-width: 600px) {
+  .message-input-cont{
+    width: 90%;
+  }
 }
 
 .message-input-cont textarea{
