@@ -915,32 +915,36 @@ function Invoices() {
       <p id="total-invoices">{allInvoices.length} invoices</p>
 
       <table id="invoices-table">
-        <tr>
-          <th>Customer name</th>
-          <th>Date</th>
-          <th>Amount</th>
-          <th>Product ID</th>
-          <th>Status</th>
-          <th>Option</th>
-        </tr>
-
-        {
-          displayedInvoices.map((invoice, index) => {
-            return <tr key={index}>
-              <td>
-                <div>
-                  <img src={`../src/assets/images/img-${(invoice.id % 10) + 1}.jpg`} alt="profile picture" />
-                  <span>{invoice.customer_name}</span>
-                </div>
-              </td>
-              <td>{invoice.date}</td>
-              <td>{invoice.amount}</td>
-              <td>{invoice.product_ID}</td>
-              <td className={invoice.status}><span>{invoice.status}</span></td>
-              <td>more</td>
+        <thead>
+            <tr>
+            <th>Customer name</th>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Product ID</th>
+            <th>Status</th>
+            <th>Option</th>
             </tr>
-          })
-        }
+        </thead>
+
+        <tbody>
+            {
+            displayedInvoices.map((invoice, index) => {
+                return <tr key={index}>
+                <td>
+                    <div>
+                    <img src={`../src/assets/images/img-${(invoice.id % 10) + 1}.jpg`} alt="profile picture" />
+                    <span>{invoice.customer_name}</span>
+                    </div>
+                </td>
+                <td>{invoice.date}</td>
+                <td>{invoice.amount}</td>
+                <td>{invoice.product_ID}</td>
+                <td className={invoice.status}><span>{invoice.status}</span></td>
+                <td>more</td>
+                </tr>
+            })
+            }
+        </tbody>
       </table>
 
       <div className="pagination-cont">
