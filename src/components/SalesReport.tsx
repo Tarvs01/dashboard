@@ -77,7 +77,7 @@ function SalesReport() {
           <div className='sales-bars-cont'>
             {
               [0,0,0,0,0,0,0].map((_, index) => {
-                return <div className='sales-bar' style={{backgroundColor: `${new Date().getDay() == index ? currentSelected == "Earnings" ? "#4f924f" : "#924f4f" : ""}`, height: (displayedData[days[index]] / 15000 * barContainerHeight)}}></div>
+                return <div key={index} className='sales-bar' style={{backgroundColor: `${new Date().getDay() == index ? currentSelected == "Earnings" ? "#4f924f" : "#924f4f" : ""}`, height: (displayedData[days[index]] / 15000 * barContainerHeight)}}></div>
               })
             }
           </div>

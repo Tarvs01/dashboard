@@ -925,8 +925,8 @@ function Invoices() {
         </tr>
 
         {
-          displayedInvoices.map((invoice) => {
-            return <tr>
+          displayedInvoices.map((invoice, index) => {
+            return <tr key={index}>
               <td>
                 <div>
                   <img src={`../src/assets/images/img-${(invoice.id % 10) + 1}.jpg`} alt="profile picture" />
