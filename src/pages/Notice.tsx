@@ -95,8 +95,8 @@ function Notice() {
     <div id='notice'>
       <div className='messages-cont' ref={messagesRef} onScroll={handleScrollEnter}>
       {
-        messages.map((message) => {
-          return <div className={`message-cont ${message.sender === "you" ? "yours" : ""}`}>
+        messages.map((message, index) => {
+          return <div key={index} className={`message-cont ${message.sender === "you" ? "yours" : ""}`}>
             <p className="name">{message.sender}</p>
             <p className="dept">{message.department}</p>
             <p className="message">{message.msg}</p>
