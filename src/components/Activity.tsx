@@ -121,8 +121,8 @@ function Activity() {
             ${activityData.transactions.end[1]}`}
             fill="none"
             stroke={`${activityData.transactions.color}`}
-            stroke-width="2.5"
-            stroke-linecap="round"
+            strokeWidth="2.5"
+            strokeLinecap="round"
             strokeDasharray={pathLengths.transactions}
             strokeDashoffset={pathLengths.transactions}
             style={{animation: `drawGraphLine 0.2s linear 0s 1 forwards`}}
@@ -136,8 +136,8 @@ function Activity() {
             ${activityData.payouts.end[1]}`}
             fill="none"
             stroke={`${activityData.payouts.color}`}
-            stroke-width="2.5"
-            stroke-linecap="round"
+            strokeWidth="2.5"
+            strokeLinecap="round"
             strokeDasharray={pathLengths.payouts}
             strokeDashoffset={pathLengths.payouts}
             style={{animation: `drawGraphLine 0.2s linear 0.2s 1 forwards`}}
@@ -151,8 +151,8 @@ function Activity() {
             ${activityData.sales.end[1]}`}
             fill="none"
             stroke={`${activityData.sales.color}`}
-            stroke-width="2.5"
-            stroke-linecap="round"
+            strokeWidth="2.5"
+            strokeLinecap="round"
             strokeDasharray={pathLengths.sales}
             strokeDashoffset={pathLengths.sales}
             style={{animation: `drawGraphLine 0.3s linear 0.4s 1 forwards`}}
@@ -166,8 +166,8 @@ function Activity() {
             ${activityData.reports.end[1] - 1.2}`}
             fill="none"
             stroke={`${activityData.reports.color}`}
-            stroke-width="2.5"
-            stroke-linecap="round"
+            strokeWidth="2.5"
+            strokeLinecap="round"
             strokeDasharray={pathLengths.reports}
             strokeDashoffset={pathLengths.reports}
             style={{animation: `drawGraphLine 0.25s linear 0.7s 1 forwards`}}
@@ -219,8 +219,8 @@ export default Activity;
        A18 18 0 0 1 40 21"
             fill="none"
             stroke="#0000FF"
-            stroke-width="2"
-            stroke-linecap="round"
+            strokeWidth="2"
+            strokeLinecap="round"
           />
 
           <path
@@ -228,8 +228,8 @@ export default Activity;
        A18 18 0 0 1 23.5 40"
             fill="none"
             stroke="#FFFFFF"
-            stroke-width="2"
-            stroke-linecap="round"
+            strokeWidth="2"
+            strokeLinecap="round"
           />
 
           <path
@@ -237,8 +237,8 @@ export default Activity;
        A18 18 0 0 1 4 23.5"
             fill="none"
             stroke="#FFff00"
-            stroke-width="2"
-            stroke-linecap="round"
+            strokeWidth="2"
+            strokeLinecap="round"
           />
 
           <path
@@ -246,8 +246,8 @@ export default Activity;
        A18 18 0 0 1 21 4"
             fill="none"
             stroke="#90CAF9"
-            stroke-width="2"
-            stroke-linecap="round"
+            strokeWidth="2"
+            strokeLinecap="round"
           />
         </svg> */}
 
@@ -264,8 +264,8 @@ export default Activity;
        A18 18 0 1 1 40 22"
           fill="none"
           stroke="#90CAF9"
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
         />
       </svg> */}
 
@@ -299,10 +299,10 @@ export default Activity;
           </linearGradient>
         </defs>
         <g
-          stroke-width="7.5"
+          strokeWidth="7.5"
           stroke="url(#sssquiggly-grad)"
           fill="none"
-          stroke-linecap="round"
+          strokeLinecap="round"
           transform="matrix(1,0,0,1,-5,135.21688842773438)"
         >
           <path d="M10,10C35.69444444444444,21.25,79.86111111111111,78.375,133.33333333333334,64C186.80555555555557,49.625,211.11111111111114,-64,266.6666666666667,-59C322.22222222222223,-54,344.44444444444446,78.625,400,88C455.55555555555554,97.375,477.7777777777778,-12.75,533.3333333333334,-14C588.8888888888889,-15.25,611.1111111111112,92.20833333333333,666.6666666666667,82C722.2222222222223,71.79166666666667,772.2222222222223,-32.791666666666664,800,-63"></path>

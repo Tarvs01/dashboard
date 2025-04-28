@@ -53,8 +53,8 @@ function AnalyticalAi() {
                 S997,179 993,-4"
                 fill="none"
                 stroke="inherit"
-                stroke-width="8"
-                stroke-linecap="round"
+                strokeWidth="8"
+                strokeLinecap="round"
               />
               <defs>
                     <linearGradient id="lineGradient" x1={0} x2={0} y1={0} y2={1}>
