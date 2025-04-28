@@ -2333,8 +2333,12 @@ textarea:focus{
 }
 
 .messages-cont::-webkit-scrollbar-thumb{
-  background-color: gray;
+  background-color: transparent;
   border-radius: 10px;
+}
+
+.scroll-enter::-webkit-scrollbar-thumb{
+  background-color: gray;
 }
 
 .message-cont{
@@ -2383,7 +2387,7 @@ textarea:focus{
 
 .yours{
   margin-left: auto;
-  margin-right: 20px;
+  margin-right: 5px;
   background-color: var(--your-message-background);
 }
 

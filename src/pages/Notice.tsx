@@ -1,4 +1,5 @@
 import {useState, ChangeEvent, useRef} from 'react'
+import {debounce} from "lodash"
 
 function Notice() {
   let currentDate = new Date();
@@ -76,9 +77,23 @@ function Notice() {
     }, 100);
   }
 
+  function handleScrollEnter(){
+    if(messagesRef.current){
+      messagesRef.current.classList.add("scroll-enter");
+    }
+
+    handleScrollEnd();
+  }
+
+  const handleScrollEnd = debounce(() => {
+    if(messagesRef.current){
+      messagesRef.current.classList.remove("scroll-enter");
+    }
+  }, 1000);
+
   return (
     <div id='notice'>
-      <div className='messages-cont' ref={messagesRef}>
+      <div className='messages-cont' ref={messagesRef} onScroll={handleScrollEnter}>
       {
         messages.map((message) => {
           return <div className={`message-cont ${message.sender === "you" ? "yours" : ""}`}>
