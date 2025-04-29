@@ -57,9 +57,7 @@ function Notice() {
       department: "Information Tech",
       timeStamp: new Date()
     }
-
-    console.log("textarea message is");
-    console.log(newMessage);
+    
     setMessages([...messages, tempMessage]);
     setNewMessage("");
 

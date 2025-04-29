@@ -939,7 +939,6 @@ function Products() {
       else{
         setSingleProduct({...singleProduct, image: ""});
       }
-      console.log(e.currentTarget.files);
     }
   }
 

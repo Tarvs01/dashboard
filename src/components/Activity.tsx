@@ -49,7 +49,6 @@ function Activity() {
     let d = 360 - (a + b + c);
     /* let c = Math.floor(Math.random() * 20) + 50;
     let d = 360 - (a + b + c); */
-    console.log(`${a} ${b} ${c} ${d}. total sum is ${a + b + c + d}`);
 
     const totalActivity = Math.floor(Math.random() * 500) + 500;
 
@@ -84,7 +83,6 @@ function Activity() {
       },
     };
 
-    console.log(finalData);
     return finalData;
   }
 

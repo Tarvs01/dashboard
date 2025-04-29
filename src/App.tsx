@@ -32,9 +32,7 @@ function App() {
 
   useEffect(() => {
     let url = window.location.href;
-    console.log("url is", url);
     let fullPath = new URL(url).pathname;
-    console.log("full path is ", fullPath);
 
     //Remove this check if paths can be deeper
     if(fullPath.split("/").length > 2){
@@ -43,7 +41,6 @@ function App() {
     }
 
     let path = fullPath.split("/")[1];
-    console.log("path is ", path);
     if(path === ""){
       setCurrentPage("Dashboard");
     }
@@ -57,7 +54,6 @@ function App() {
     return (<Error />)
   }
 
-  console.log("current page is ", currentPage);
   return (
     <div className='container'>
       <Sidebar setPage={setCurrentPage} isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen}/>

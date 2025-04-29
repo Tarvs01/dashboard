@@ -294,8 +294,6 @@ function Calendar() {
 
     return false;
   }
-  console.log("calling colate events");
-  console.log(collateEvents())
 
   return (
     <div className="calendar-comp-cont">

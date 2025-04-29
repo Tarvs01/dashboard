@@ -1541,7 +1541,6 @@ function Contacts() {
     }
 
     function HandleSelectChange(e: ChangeEvent<HTMLSelectElement>){
-        console.log("select value is ", e.target.value);
         if(e.target.value == "ascending"){
             sortContacts(allContacts, "ascending");
         }
@@ -1692,7 +1691,6 @@ function Contacts() {
             else{
                 setSingleContact({...singleContact, image: ""});
             }
-            console.log(e.currentTarget.files);
         }
         else if(inputType === "meet"){
             let tempMeet = Number(e.currentTarget.value);

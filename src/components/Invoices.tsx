@@ -821,8 +821,6 @@ function Invoices() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   function goForward(){
-    console.log(`currentIndex is ${currentIndex}`);
-    console.log(`Length is ${length}`);
     //let tempDisplayedInvoices: InvoiceType[] = [];
     let tempDisplayedInvoices = selectedInvoices.filter((_, index) => {
         if(index >= (currentIndex) && index < (currentIndex + length)){
@@ -833,8 +831,6 @@ function Invoices() {
         }
     });
 
-    console.log("temp invoices forward is");
-    console.log(tempDisplayedInvoices);
     setCurrentIndex(currentIndex + length);
     setDisplayedInvoices(tempDisplayedInvoices);
   }

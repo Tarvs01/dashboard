@@ -3,7 +3,7 @@ import React from 'react'
 interface SelectProps{
     options: (string | number)[];
     currentState: number | string;
-    setState: React.Dispatch<React.SetStateAction<string>>;
+    setState: React.Dispatch<React.SetStateAction<string | number>>;
 }
 function Select({ options, setState, currentState} : SelectProps) {
   return (
@@ -12,7 +12,7 @@ function Select({ options, setState, currentState} : SelectProps) {
         <div className='select-options-cont'>
             {
                 options.map((option, index) => {
-                    return <div key={index} className='select-option'>{option}</div>
+                    return <div key={index} className='select-option' onClick={() => setState(option)}>{option}</div>
                 })
             }
         </div>
