@@ -1096,10 +1096,10 @@ function Products() {
           <input type="text" name="name" id="name" required value={singleProduct.name} onInput={(e) => handleInputChange(e, "name")}/>
 
           <label htmlFor="category">Category</label>
-          <select name="category" id="category" onChange={handleEditCategorySelectChange}>
+          <select name="category" id="category" onChange={handleEditCategorySelectChange} value={singleProduct.category}>
             {
               categories.map((category, index) => {
-                return <option key={index} value={category} selected={singleProduct.category === category}>{category}</option>
+                return <option key={index} value={category}>{category}</option>
               })
             }
           </select>
@@ -1152,8 +1152,8 @@ function Products() {
 
       <div className="products-header">
         <input type="text" name="product-search" id="product-search" placeholder='Enter search term' value={searchTerm} onInput={handleSearchChange}/>
-        <select name="categories" id="categories" className="product-categories" onChange={handleCategorySelectChange}>
-          <option value="All" selected>All</option>
+        <select name="categories" id="categories" className="product-categories" onChange={handleCategorySelectChange} defaultValue={"All"}>
+          <option value="All">All</option>
           {
             categories.map((category, index) => {
               return <option value={category} key={index}>{category}</option>
