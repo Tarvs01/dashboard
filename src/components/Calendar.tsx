@@ -486,7 +486,7 @@ function Calendar() {
 
         {calculateDays().map((day, index) => {
           return (
-            <div key={index} className={`dates-cont ${todaysDate(day) ? "today-large" : ""}`} 
+            <div key={index} className={`dates-cont ${!(index + 1 < day) && todaysDate(day) ? "today-large" : ""}`} 
             onClick={(e) => {
                 if (index + 1 < day) {
                   e.stopPropagation();
@@ -494,7 +494,7 @@ function Calendar() {
                   setModalOpenDay(day);
                 }
               }}>
-              <div className={`${todaysDate(day) ? "today" : ""} `}></div>
+              <div className={`${!(index + 1 < day) && todaysDate(day) ? "today" : ""} `}></div>
               <span
                 className={`${index + 1 < day ? "gray" : "day-date"}`}
                 
