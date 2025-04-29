@@ -435,7 +435,6 @@ function Calendar() {
             name="months"
             id="calendar-months"
             value={selectedMonth}
-            defaultValue={months[new Date().getMonth()]}
             onChange={(e) => handleSelectChange(e, "month")}
           >
             {months.map((month, index) => {
@@ -451,7 +450,6 @@ function Calendar() {
             name="years"
             id="calendar-years"
             value={selectedYear}
-            defaultValue={currentYear}
             onChange={(e) => handleSelectChange(e, "year")}
           >
             {arrayOfYears.map((year, index) => {
@@ -480,8 +478,8 @@ function Calendar() {
       <div className="calendar-dates-cont">
         {days.map((day, index) => {
           return (
-            <div className="days-header">
-              <span key={index}>{day}</span>
+            <div className="days-header" key={index}>
+              <span>{day}</span>
             </div>
           );
         })}
@@ -521,10 +519,10 @@ function Calendar() {
                 <p>{[...(collateEvents(day).specific), ...(collateEvents(day).yearly)].length > 1 ? `+${[...(collateEvents(day).specific), ...(collateEvents(day).yearly)].length - 1} events` : ""}</p>
               </div>
 
-              {([...(collateEvents(day).specific), ...(collateEvents(day).yearly)].length > 0) && <p className="total-events-today">
+              {([...(collateEvents(day).specific), ...(collateEvents(day).yearly)].length > 0) && <div className="total-events-today">
                 <div className="event-bar" style={{backgroundColor: colors[(day + index) % colors.length]}}></div>
                 <p>{`${[...(collateEvents(day).specific), ...(collateEvents(day).yearly)].length} events`}</p>
-              </p>}
+              </div>}
             </div>
           );
         })}
