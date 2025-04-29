@@ -1851,7 +1851,8 @@ main > div:not([class="utility-bar-cont"]){
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
+  max-width: 400px;
+  width: 97%;
   background-color: var(--component-bg-color);
   padding: var(--component-padding);
   border-radius: var(--component-border-radius);

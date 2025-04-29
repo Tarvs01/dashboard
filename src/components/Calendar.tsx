@@ -385,7 +385,7 @@ function Calendar() {
                     name="event-freq"
                     id="event-yearly"
                     onClick={() => setFrequency("Yearly")}
-                    checked={frequency === "Yearly"}
+                    defaultChecked={frequency === "Yearly"}
                   />
                   <label htmlFor="event-yearly">Every year</label>
                 </div>
@@ -396,7 +396,7 @@ function Calendar() {
                     name="event-freq"
                     id="event-single"
                     onClick={() => setFrequency("Single")}
-                    checked={frequency === "Single"}
+                    defaultChecked={frequency === "Single"}
                   />
                   <label htmlFor="event-single">This year only</label>
                 </div>
