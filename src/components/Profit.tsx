@@ -10,7 +10,7 @@ function Profit({width}: {width:number}) {
             <h3>Profit</h3>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512"><path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z" fill='inherit' /></svg>
         </div>
-        <img src="../src/assets/images/profit-bg-4.webp" alt="" />
+        <img src="../assets/images/profit-bg-4.webp" alt="" />
 
         <div className="profit-profits">
             <h3>+14% <span>Since last week</span></h3>

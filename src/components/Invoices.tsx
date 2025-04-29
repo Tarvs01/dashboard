@@ -928,7 +928,7 @@ function Invoices() {
                 return <tr key={index}>
                 <td>
                     <div>
-                    <img src={`../src/assets/images/img-${(invoice.id % 10) + 1}.jpg`} alt="profile picture" />
+                    <img src={`../assets/images/img-${(invoice.id % 10) + 1}.jpg`} alt="profile picture" />
                     <span>{invoice.customer_name}</span>
                     </div>
                 </td>

@@ -20,7 +20,7 @@ function Products() {
       tags: ["cosmetic", "beauty", "container", "art"],
       category: "Cosmetics",
       stock: 15,
-      image: "../src/assets/images/product-images/box.jpg",
+      image: "../assets/images/product-images/box.jpg",
       id: 0
     },
     {
@@ -29,7 +29,7 @@ function Products() {
       tags: ["foodstuff", "baked", "flour", "cheap"],
       category: "Foodstuffs",
       stock: 4000,
-      image: "../src/assets/images/product-images/bread.jpg",
+      image: "../assets/images/product-images/bread.jpg",
       id: 1
     },
     {
@@ -38,7 +38,7 @@ function Products() {
       tags: ["camon", "photography", "photo", "electronics", "images"],
       category: "Appliances",
       stock: 500,
-      image: "../src/assets/images/product-images/camera.jpg",
+      image: "../assets/images/product-images/camera.jpg",
       id: 2
     },
     {
@@ -47,7 +47,7 @@ function Products() {
       tags: ["milk", "diary", "lactose", "fresh", "farm"],
       category: "Foodstuffs",
       stock: 395,
-      image: "../src/assets/images/product-images/cheese.jpg",
+      image: "../assets/images/product-images/cheese.jpg",
       id: 3
     },
     {
@@ -56,7 +56,7 @@ function Products() {
       tags: ["fruit", "farm", "fresh", "red", "small"],
       category: "Foodstuffs",
       stock: 2000,
-      image: "../src/assets/images/product-images/cherries.jpg",
+      image: "../assets/images/product-images/cherries.jpg",
       id: 4
     },
     {
@@ -65,7 +65,7 @@ function Products() {
       tags: ["drink", "caffine", "beans", "energy"],
       category: "Foodstuffs",
       stock: 609,
-      image: "../src/assets/images/product-images/coffee.jpg",
+      image: "../assets/images/product-images/coffee.jpg",
       id: 5
     },
     {
@@ -74,7 +74,7 @@ function Products() {
       tags: ["muffin", "cake", "baked", "cup"],
       category: "Foodstuffs",
       stock: 200,
-      image: "../src/assets/images/product-images/cupcake.jpg",
+      image: "../assets/images/product-images/cupcake.jpg",
       id: 6
     },
     {
@@ -83,7 +83,7 @@ function Products() {
       tags: ["glasses", "eye", "fashion"],
       category: "Accessories",
       stock: 248,
-      image: "../src/assets/images/product-images/glasses.jpg",
+      image: "../assets/images/product-images/glasses.jpg",
       id: 7
     },
     {
@@ -92,7 +92,7 @@ function Products() {
       tags: ["shiny", "lipstick", "lips", "fashion"],
       category: "Cosmetics",
       stock: 600,
-      image: "../src/assets/images/product-images/lip-gloss.jpg",
+      image: "../assets/images/product-images/lip-gloss.jpg",
       id: 8
     },
     {
@@ -101,7 +101,7 @@ function Products() {
       tags: ["scent", "fashion", "smell", "aroma", "beauty"],
       category: "Cosmetics",
       stock: 156,
-      image: "../src/assets/images/product-images/perfume.jpg",
+      image: "../assets/images/product-images/perfume.jpg",
       id: 9
     },
     {
@@ -110,7 +110,7 @@ function Products() {
       tags: ["root", "tuber", "farm", "crop", "food"],
       category: "Foodstuffs",
       stock: 1047,
-      image: "../src/assets/images/product-images/potato.jpg",
+      image: "../assets/images/product-images/potato.jpg",
       id: 10
     },
     {
@@ -119,7 +119,7 @@ function Products() {
       tags: ["fashion", "time", "clock", "hand"],
       category: "Accessories",
       stock: 497,
-      image: "../src/assets/images/product-images/watch.jpg",
+      image: "../assets/images/product-images/watch.jpg",
       id: 11
     },
     {
@@ -128,7 +128,7 @@ function Products() {
       tags: ["paralyzed", "medical", "legs"],
       category: "Appliances",
       stock: 0,
-      image: "../src/assets/images/product-images/wheelchair.jpg",
+      image: "../assets/images/product-images/wheelchair.jpg",
       id: 12
     },
     {
@@ -137,7 +137,7 @@ function Products() {
       tags: ["shellfood", "luxury", "shellfish"],
       category: "Foodstuffs",
       stock: 259,
-      image: "../src/assets/images/product-images/lobster.jpg",
+      image: "../assets/images/product-images/lobster.jpg",
       id: 13
     },
     {
@@ -146,7 +146,7 @@ function Products() {
       tags: ["nuts", "fruit", "tree"],
       category: "Foodstuffs",
       stock: 9800,
-      image: "../src/assets/images/product-images/almond.jpg",
+      image: "../assets/images/product-images/almond.jpg",
       id: 14
     },
     {
@@ -155,7 +155,7 @@ function Products() {
       tags: ["Kitchen", "electronic", "utensil"],
       category: "Appliances",
       stock: 390,
-      image: "../src/assets/images/product-images/toaster.jpg",
+      image: "../assets/images/product-images/toaster.jpg",
       id: 15
     },
     {
@@ -164,7 +164,7 @@ function Products() {
       tags: ["fruit", "sweet", "fresh", "red"],
       category: "Foodstuffs",
       stock: 2050,
-      image: "../src/assets/images/product-images/strawberries.jpg",
+      image: "../assets/images/product-images/strawberries.jpg",
       id: 16
     },
     {
@@ -173,7 +173,7 @@ function Products() {
       tags: ["health", "cleaner", "electronic"],
       category: "Appliances",
       stock: 450,
-      image: "../src/assets/images/product-images/vacuum_cleaner.jpg",
+      image: "../assets/images/product-images/vacuum_cleaner.jpg",
       id: 17
     },
     {
@@ -182,7 +182,7 @@ function Products() {
       tags: ["jewellery", "gold", "luxury"],
       category: "Accessories",
       stock: 87,
-      image: "../src/assets/images/product-images/ring.jpg",
+      image: "../assets/images/product-images/ring.jpg",
       id: 18
     },
     {
@@ -191,7 +191,7 @@ function Products() {
       tags: ["vegetable", "fresh", "farm", "orange"],
       category: "Foodstuffs",
       stock: 3407,
-      image: "../src/assets/images/product-images/carrot.jpg",
+      image: "../assets/images/product-images/carrot.jpg",
       id: 19
     },
     {
@@ -200,7 +200,7 @@ function Products() {
       tags: ["fruit", "nut", "tree", "fibre"],
       category: "Foodstuffs",
       stock: 1200,
-      image: "../src/assets/images/product-images/coconut.jpg",
+      image: "../assets/images/product-images/coconut.jpg",
       id: 20
     },
     {
@@ -209,7 +209,7 @@ function Products() {
       tags: ["hat", "fashion", "headgear"],
       category: "Accessories",
       stock: 95,
-      image: "../src/assets/images/product-images/hat.jpg",
+      image: "../assets/images/product-images/hat.jpg",
       id: 21
     },
     {
@@ -218,7 +218,7 @@ function Products() {
       tags: ["beauty", "pink"],
       category: "Cosmetics",
       stock: 58,
-      image: "../src/assets/images/product-images/lipstick.jpg",
+      image: "../assets/images/product-images/lipstick.jpg",
       id: 22
     },
     {
@@ -227,7 +227,7 @@ function Products() {
       tags: ["fast food", "junk", "calorie", "meat"],
       category: "Foodstuffs",
       stock: 1008,
-      image: "../src/assets/images/product-images/burger.jpg",
+      image: "../assets/images/product-images/burger.jpg",
       id: 23
     },
     {
@@ -236,7 +236,7 @@ function Products() {
       tags: ["fruit", "red", "fresh", "farm"],
       category: "Foodstuffs",
       stock: 980,
-      image: "../src/assets/images/product-images/tomato.jpg",
+      image: "../assets/images/product-images/tomato.jpg",
       id: 24
     },
     {
@@ -245,7 +245,7 @@ function Products() {
       tags: ["leather", "brown", "fashion", "men"],
       category: "Accessories",
       stock: 496,
-      image: "../src/assets/images/product-images/brown_belt.jpg",
+      image: "../assets/images/product-images/brown_belt.jpg",
       id: 25
     },
     {
@@ -254,7 +254,7 @@ function Products() {
       tags: ["vegetable", "plant", "yellow", "fresh"],
       category: "Foodstuffs",
       stock: 900,
-      image: "../src/assets/images/product-images/zucchini.jpg",
+      image: "../assets/images/product-images/zucchini.jpg",
       id: 26
     }, 
     {
@@ -263,7 +263,7 @@ function Products() {
       tags: ["handbag", "fashion", "light"],
       category: "Accessories",
       stock: 690,
-      image: "../src/assets/images/product-images/tote.jpg",
+      image: "../assets/images/product-images/tote.jpg",
       id: 27
     },
     {
@@ -272,7 +272,7 @@ function Products() {
       tags: ["grain", "crop", "farm"],
       category: "Foodstuffs",
       stock: 450,
-      image: "../src/assets/images/product-images/brown_rice.jpg",
+      image: "../assets/images/product-images/brown_rice.jpg",
       id: 28
     },
     {
@@ -281,7 +281,7 @@ function Products() {
       tags: ["electronic", "toaster", "bread"],
       category: "Appliances",
       stock: 300,
-      image: "../src/assets/images/product-images/sandwich_maker.jpg",
+      image: "../assets/images/product-images/sandwich_maker.jpg",
       id: 29
     },
     {
@@ -290,7 +290,7 @@ function Products() {
       tags: ["spice", "farm", "vegetable", "fruit", "green"],
       category: "Foodstuffs",
       stock: 680,
-      image: "../src/assets/images/product-images/serrano.jpg",
+      image: "../assets/images/product-images/serrano.jpg",
       id: 30
     },
     {
@@ -299,7 +299,7 @@ function Products() {
       tags: ["silver", "bracelet", "jewellery"],
       category: "Accessories",
       stock: 570,
-      image: "../src/assets/images/product-images/bangle.jpg",
+      image: "../assets/images/product-images/bangle.jpg",
       id: 31
     },
     {
@@ -308,7 +308,7 @@ function Products() {
       tags: ["fruit", "sour", "tree", "citrus"],
       category: "Foodstuffs",
       stock: 900,
-      image: "../src/assets/images/product-images/lemon.jpg",
+      image: "../assets/images/product-images/lemon.jpg",
       id: 32
     },
     {
@@ -317,7 +317,7 @@ function Products() {
       tags: ["footwear", "lights", "fashion", "luxury"],
       category: "Accessories",
       stock: 700,
-      image: "../src/assets/images/product-images/neon_shoe.jpg",
+      image: "../assets/images/product-images/neon_shoe.jpg",
       id: 33
     },
     {
@@ -326,7 +326,7 @@ function Products() {
       tags: ["fruit", "vegetable", "spice", "orange", "farm"],
       category: "Foodstuffs",
       stock: 1500,
-      image: "../src/assets/images/product-images/habanero.jpg",
+      image: "../assets/images/product-images/habanero.jpg",
       id: 34
     },
     {
@@ -335,7 +335,7 @@ function Products() {
       tags: ["leather", "fashion", "buckle"],
       category: "Accessories",
       stock: 690,
-      image: "../src/assets/images/product-images/black_belt.jpg",
+      image: "../assets/images/product-images/black_belt.jpg",
       id: 35
     },
     {
@@ -344,7 +344,7 @@ function Products() {
       tags: ["tuber", "vegetable", "root", "red"],
       category: "Foodstuffs",
       stock: 1704,
-      image: "../src/assets/images/product-images/radish.jpg",
+      image: "../assets/images/product-images/radish.jpg",
       id: 36
     },
     {
@@ -353,7 +353,7 @@ function Products() {
       tags: ["bath", "clean", "beauty", "bubbles"],
       category: "Cosmetics",
       stock: 900,
-      image: "../src/assets/images/product-images/soap.jpg",
+      image: "../assets/images/product-images/soap.jpg",
       id: 37
     },
     {
@@ -362,7 +362,7 @@ function Products() {
       tags: ["fruit", "berry", "farm", "sweet"],
       category: "Foodstuffs",
       stock: 1200,
-      image: "../src/assets/images/product-images/banana.jpg",
+      image: "../assets/images/product-images/banana.jpg",
       id: 38
     },
     {
@@ -371,7 +371,7 @@ function Products() {
       tags: ["beads", "chinese"],
       category: "Accessories",
       stock: 590,
-      image: "../src/assets/images/product-images/shouzhu.jpg",
+      image: "../assets/images/product-images/shouzhu.jpg",
       id: 39
     },
     {
@@ -380,7 +380,7 @@ function Products() {
       tags: ["vegetable", "farm", "orange"],
       category: "Foodstuffs",
       stock: 700,
-      image: "../src/assets/images/product-images/pumpkin.jpg",
+      image: "../assets/images/product-images/pumpkin.jpg",
       id: 40
     },
     {
@@ -389,7 +389,7 @@ function Products() {
       tags: ["cloth", "luxury", "fashion"],
       category: "Accessories",
       stock: 430,
-      image: "../src/assets/images/product-images/scarf.jpg",
+      image: "../assets/images/product-images/scarf.jpg",
       id: 41
     },
     {
@@ -398,7 +398,7 @@ function Products() {
       tags: ["nuts", "fruit", "plant", "farm"],
       category: "Foodstuffs",
       stock: 5000,
-      image: "../src/assets/images/product-images/walnut.jpg",
+      image: "../assets/images/product-images/walnut.jpg",
       id: 42
     },
     {
@@ -407,7 +407,7 @@ function Products() {
       tags: ["electronic", "press"],
       category: "Appliances",
       stock: 390,
-      image: "../src/assets/images/product-images/electric_iron.jpg",
+      image: "../assets/images/product-images/electric_iron.jpg",
       id: 43
     },
     {
@@ -416,7 +416,7 @@ function Products() {
       tags: ["snack", "potato", "junk", "fried"],
       category: "Foodstuffs",
       stock: 3600,
-      image: "../src/assets/images/product-images/potato_chips.jpg",
+      image: "../assets/images/product-images/potato_chips.jpg",
       id: 44
     },
     {
@@ -425,7 +425,7 @@ function Products() {
       tags: ["fashion", "leather", "women"],
       category: "Accessories",
       stock: 680,
-      image: "../src/assets/images/product-images/handbag.jpg",
+      image: "../assets/images/product-images/handbag.jpg",
       id: 45
     },
     {
@@ -434,7 +434,7 @@ function Products() {
       tags: ["fruit", "tree", "orange"],
       category: "Foodstuffs",
       stock: 2900,
-      image: "../src/assets/images/product-images/dates.jpg",
+      image: "../assets/images/product-images/dates.jpg",
       id: 46
     },
     {
@@ -443,7 +443,7 @@ function Products() {
       tags: ["electronic", "food", "sharp"],
       category: "Appliances",
       stock: 800,
-      image: "../src/assets/images/product-images/blender.jpg",
+      image: "../assets/images/product-images/blender.jpg",
       id: 47
     },
     {
@@ -452,7 +452,7 @@ function Products() {
       tags: ["bees", "sweet", "orange", "natural"],
       category: "Foodstuffs",
       stock: 310,
-      image: "../src/assets/images/product-images/honey.jpg",
+      image: "../assets/images/product-images/honey.jpg",
       id: 48
     },
     {
@@ -461,7 +461,7 @@ function Products() {
       tags: ["leather", "fashion"],
       category: "Accessories",
       stock: 550,
-      image: "../src/assets/images/product-images/sling_bag.jpg",
+      image: "../assets/images/product-images/sling_bag.jpg",
       id: 49
     },
     {
@@ -470,7 +470,7 @@ function Products() {
       tags: ["bread", "pastry", "dough"],
       category: "Foodstuffs",
       stock: 1400,
-      image: "../src/assets/images/product-images/roulade.jpg",
+      image: "../assets/images/product-images/roulade.jpg",
       id: 50
     },
     {
@@ -479,7 +479,7 @@ function Products() {
       tags: ["fashion", "beauty", "pink", "luxury"],
       category: "Cosmetics",
       stock: 300,
-      image: "../src/assets/images/product-images/makeup_kit.jpg",
+      image: "../assets/images/product-images/makeup_kit.jpg",
       id: 51
     },
     {
@@ -488,7 +488,7 @@ function Products() {
       tags: ["chicken", "beef", "pork"],
       category: "Foodstuffs",
       stock: 962,
-      image: "../src/assets/images/product-images/meat.jpg",
+      image: "../assets/images/product-images/meat.jpg",
       id: 52
     },
     {
@@ -497,7 +497,7 @@ function Products() {
       tags: ["fashion", "luxury", "jewellery"],
       category: "Accessories",
       stock: 1234,
-      image: "../src/assets/images/product-images/earring.jpg",
+      image: "../assets/images/product-images/earring.jpg",
       id: 53
     },
     {
@@ -506,7 +506,7 @@ function Products() {
       tags: ["nuts", "fruit", "tree", "farm"],
       category: "Foodstuffs",
       stock: 6800,
-      image: "../src/assets/images/product-images/cashew_nut.jpg",
+      image: "../assets/images/product-images/cashew_nut.jpg",
       id: 54
     },
     {
@@ -515,7 +515,7 @@ function Products() {
       tags: ["electronic", "coolant", "fresh air"],
       category: "Appliances",
       stock: 2790,
-      image: "../src/assets/images/product-images/fan.jpg",
+      image: "../assets/images/product-images/fan.jpg",
       id: 55
     },
     {
@@ -524,7 +524,7 @@ function Products() {
       tags: ["fruit", "vegetable", "spice", "fresh"],
       category: "Foodstuffs",
       stock: 910,
-      image: "../src/assets/images/product-images/bell_pepper.jpg",
+      image: "../assets/images/product-images/bell_pepper.jpg",
       id: 56
     },
     {
@@ -533,7 +533,7 @@ function Products() {
       tags: ["clothing", "corporate", "fashion"],
       category: "Accessories",
       stock: 700,
-      image: "../src/assets/images/product-images/bowtie.jpg",
+      image: "../assets/images/product-images/bowtie.jpg",
       id: 57
     },
     {
@@ -542,7 +542,7 @@ function Products() {
       tags: ["fruit", "blue", "berry", "black", "plant"],
       category: "Foodstuffs",
       stock: 4902,
-      image: "../src/assets/images/product-images/blueberry.jpg",
+      image: "../assets/images/product-images/blueberry.jpg",
       id: 58
     },
     {
@@ -551,7 +551,7 @@ function Products() {
       tags: ["iphone", "rubber", "cover"],
       category: "Accessories",
       stock: 1040,
-      image: "../src/assets/images/product-images/casing.jpg",
+      image: "../assets/images/product-images/casing.jpg",
       id: 59
     },
     {
@@ -560,7 +560,7 @@ function Products() {
       tags: ["fruit", "nut", "brown"],
       category: "Foodstuffs",
       stock: 3500,
-      image: "../src/assets/images/product-images/hazelnut.jpg",
+      image: "../assets/images/product-images/hazelnut.jpg",
       id: 60
     },
     {
@@ -569,7 +569,7 @@ function Products() {
       tags: ["electronic", "heat", "hair"],
       category: "Appliances",
       stock: 580,
-      image: "../src/assets/images/product-images/hairdryer.jpg",
+      image: "../assets/images/product-images/hairdryer.jpg",
       id: 61
     },
     {
@@ -578,7 +578,7 @@ function Products() {
       tags: ["beans", "grain", "plant"],
       category: "Foodstuffs",
       stock: 4200,
-      image: "../src/assets/images/product-images/black_beans.jpg",
+      image: "../assets/images/product-images/black_beans.jpg",
       id: 62
     },
     {
@@ -587,7 +587,7 @@ function Products() {
       tags: ["electronic", "mixer", "kitchen"],
       category: "Appliances",
       stock: 490,
-      image: "../src/assets/images/product-images/whisk.jpg",
+      image: "../assets/images/product-images/whisk.jpg",
       id: 63
     },
     {
@@ -596,7 +596,7 @@ function Products() {
       tags: ["nuts", "plant", "fruit"],
       category: "Foodstuffs",
       stock: 9800,
-      image: "../src/assets/images/product-images/pistachio.jpg",
+      image: "../assets/images/product-images/pistachio.jpg",
       id: 64
     },
     {
@@ -605,7 +605,7 @@ function Products() {
       tags: ["beauty", "organic"],
       category: "Cosmetics",
       stock: 430,
-      image: "../src/assets/images/product-images/face_powder.jpg",
+      image: "../assets/images/product-images/face_powder.jpg",
       id: 65
     },
     {
@@ -614,7 +614,7 @@ function Products() {
       tags: ["vegetable", "plant", "fresh"],
       category: "Foodstuffs",
       stock: 940,
-      image: "../src/assets/images/product-images/artichoke.jpg",
+      image: "../assets/images/product-images/artichoke.jpg",
       id: 66
     },
     {
@@ -623,7 +623,7 @@ function Products() {
       tags: ["music", "loud", "bass", "electronic"],
       category: "Appliances",
       stock: 2600,
-      image: "../src/assets/images/product-images/boombox.png",
+      image: "../assets/images/product-images/boombox.png",
       id: 67
     },
     {
@@ -632,7 +632,7 @@ function Products() {
       tags: ["white", "vegetable", "spice"],
       category: "Foodstuffs",
       stock: 3280,
-      image: "../src/assets/images/product-images/garlic.jpg",
+      image: "../assets/images/product-images/garlic.jpg",
       id: 68
     },
     {
@@ -641,7 +641,7 @@ function Products() {
       tags: ["beauty", "skin", "cream"],
       category: "Cosmetics",
       stock: 880,
-      image: "../src/assets/images/product-images/cream.jpg",
+      image: "../assets/images/product-images/cream.jpg",
       id: 69
     },
     {
@@ -650,7 +650,7 @@ function Products() {
       tags: ["grain", "plant", "crop", "brown"],
       category: "Foodstuffs",
       stock: 5300,
-      image: "../src/assets/images/product-images/wheat.jpg",
+      image: "../assets/images/product-images/wheat.jpg",
       id: 70
     },
     {
@@ -659,7 +659,7 @@ function Products() {
       tags: ["leather", "container", "safety"],
       category: "Accessories",
       stock: 402,
-      image: "../src/assets/images/product-images/black_wallet.jpg",
+      image: "../assets/images/product-images/black_wallet.jpg",
       id: 71
     },
     {
@@ -668,7 +668,7 @@ function Products() {
       tags: ["grain", "plant", "legume"],
       category: "Foodstuffs",
       stock: 8200,
-      image: "../src/assets/images/product-images/white_beans.jpg",
+      image: "../assets/images/product-images/white_beans.jpg",
       id: 72
     },
     {
@@ -677,7 +677,7 @@ function Products() {
       tags: ["brush", "beauty", "facial"],
       category: "Cosmetics",
       stock: 710,
-      image: "../src/assets/images/product-images/makeup_brushes.jpg",
+      image: "../assets/images/product-images/makeup_brushes.jpg",
       id: 73
     },
     {
@@ -686,7 +686,7 @@ function Products() {
       tags: ["fruit", "green", "plant", "fresh"],
       category: "Foodstuffs",
       stock: 1300,
-      image: "../src/assets/images/product-images/unripe_figs.jpg",
+      image: "../assets/images/product-images/unripe_figs.jpg",
       id: 74
     },
     {
@@ -695,7 +695,7 @@ function Products() {
       tags: ["spoon", "fork", "wood", "brown"],
       category: "Appliances",
       stock: 499,
-      image: "../src/assets/images/product-images/cooking_utensils.jpg",
+      image: "../assets/images/product-images/cooking_utensils.jpg",
       id: 75
     },
     {
@@ -704,7 +704,7 @@ function Products() {
       tags: ["grain", "plant", "legume"],
       category: "Foodstuffs",
       stock: 4920,
-      image: "../src/assets/images/product-images/lentil.jpg",
+      image: "../assets/images/product-images/lentil.jpg",
       id: 76
     },
     {
@@ -713,7 +713,7 @@ function Products() {
       tags: ["smoke", "cigarette", "tobacco"],
       category: "Accessories",
       stock: 870,
-      image: "../src/assets/images/product-images/cigar.jpg",
+      image: "../assets/images/product-images/cigar.jpg",
       id: 77
     },
     {
@@ -722,7 +722,7 @@ function Products() {
       tags: ["spice", "black", "vegetable", "fruit"],
       category: "Foodstuffs",
       stock: 5070,
-      image: "../src/assets/images/product-images/black_pepper.jpg",
+      image: "../assets/images/product-images/black_pepper.jpg",
       id: 78
     },
     {
@@ -731,7 +731,7 @@ function Products() {
       tags: ["beauty", "powder", "facial"],
       category: "Cosmetics",
       stock: 630,
-      image: "../src/assets/images/product-images/blush.jpg",
+      image: "../assets/images/product-images/blush.jpg",
       id: 79
     },
     {
@@ -740,7 +740,7 @@ function Products() {
       tags: ["green", "grain", "legume"],
       category: "Foodstuffs",
       stock: 3200,
-      image: "../src/assets/images/product-images/green_beans.jpg",
+      image: "../assets/images/product-images/green_beans.jpg",
       id: 80
     },
     {
@@ -749,7 +749,7 @@ function Products() {
       tags: ["leather", "safety", "container"],
       category: "Accessories",
       stock: 598,
-      image: "../src/assets/images/product-images/brown_wallet.jpg",
+      image: "../assets/images/product-images/brown_wallet.jpg",
       id: 81
     },
     {
@@ -758,7 +758,7 @@ function Products() {
       tags: ["jewellery", "luxury", "chain"],
       category: "Accessories",
       stock: 600,
-      image: "../src/assets/images/product-images/zircon.jpg",
+      image: "../assets/images/product-images/zircon.jpg",
       id: 82
     },
     {
@@ -767,7 +767,7 @@ function Products() {
       tags: ["kitchen", "flour", "baking"],
       category: "Appliances",
       stock: 840,
-      image: "../src/assets/images/product-images/measures.jpg",
+      image: "../assets/images/product-images/measures.jpg",
       id: 83
     },
     {
@@ -776,7 +776,7 @@ function Products() {
       tags: ["women", "bag", "red", "leather"],
       category: "Accessories",
       stock: 820,
-      image: "../src/assets/images/product-images/purse.jpg",
+      image: "../assets/images/product-images/purse.jpg",
       id: 84
     },
     {
@@ -785,7 +785,7 @@ function Products() {
       tags: ["mint", "bath", "beauty", "soap"],
       category: "Cosmetics",
       stock: 1290,
-      image: "../src/assets/images/product-images/bath_balls.jpg",
+      image: "../assets/images/product-images/bath_balls.jpg",
       id: 85
     },
     {
@@ -794,7 +794,7 @@ function Products() {
       tags: ["cloth", "connector"],
       category: "Accessories",
       stock: 3600,
-      image: "../src/assets/images/product-images/buttons.jpg",
+      image: "../assets/images/product-images/buttons.jpg",
       id: 86
     },
     {
@@ -803,7 +803,7 @@ function Products() {
       tags: ["perfume", "beauty", "luxury"],
       category: "Cosmetics",
       stock: 374,
-      image: "../src/assets/images/product-images/fragrance.jpg",
+      image: "../assets/images/product-images/fragrance.jpg",
       id: 87
     },
     {
@@ -812,7 +812,7 @@ function Products() {
       tags: ["expensive", "luxury", "jewellery", "fashion"],
       category: "Accessories",
       stock: 10,
-      image: "../src/assets/images/product-images/diamond.jpg",
+      image: "../assets/images/product-images/diamond.jpg",
       id: 88
     },
     {
@@ -821,7 +821,7 @@ function Products() {
       tags: ["coolant", "electronic", "kitchen"],
       category: "Appliances",
       stock: 180,
-      image: "../src/assets/images/product-images/refrigerator.jpg",
+      image: "../assets/images/product-images/refrigerator.jpg",
       id: 89
     },
     {
@@ -830,7 +830,7 @@ function Products() {
       tags: ["footwear", "black", "fashion"],
       category: "Accessories",
       stock: 630,
-      image: "../src/assets/images/product-images/female_shoes.jpg",
+      image: "../assets/images/product-images/female_shoes.jpg",
       id: 90
     },
     {
@@ -839,7 +839,7 @@ function Products() {
       tags: ["powder", "facial", "colors"],
       category: "Cosmetics",
       stock: 90,
-      image: "../src/assets/images/product-images/mascara.jpg",
+      image: "../assets/images/product-images/mascara.jpg",
       id: 91
     },
     {
@@ -848,7 +848,7 @@ function Products() {
       tags: ["electronic", "heat", "stove"],
       category: "Appliances",
       stock: 0,
-      image: "../src/assets/images/product-images/stove.jpg",
+      image: "../assets/images/product-images/stove.jpg",
       id: 92
     },
     {
@@ -857,7 +857,7 @@ function Products() {
       tags: ["perfume", "fragrance", "luxury", "beauty"],
       category: "Cosmetics",
       stock: 389,
-      image: "../src/assets/images/product-images/lux_scent.jpg",
+      image: "../assets/images/product-images/lux_scent.jpg",
       id: 93
     }
   ];
